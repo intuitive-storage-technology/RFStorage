@@ -13,6 +13,9 @@ namespace RFStorage.Model
     class LagerstatusSingleton : INotifyPropertyChanged
     {
         #region PropertyChanged
+        /// <summary>
+        /// Den sørger for at sende opdateringer til VM/View når en property bliver opdateret med en værdi.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -24,13 +27,18 @@ namespace RFStorage.Model
 
 
         #region Instance Field
+        /// <summary>
+        /// Instance fields kan være faste værdier eller unikke værdier for objekter. 
+        /// </summary>
         private static LagerstatusSingleton _instance = null;
 
         #endregion
 
 
         #region Constructor
-
+        /// <summary>
+        /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
+        /// </summary>
         private LagerstatusSingleton()
         {
             VareOC = new ObservableCollection<Vare>();
@@ -40,8 +48,11 @@ namespace RFStorage.Model
 
 
 
-        #region Property
-
+        #region Properties
+        /// <summary>
+        /// VareOC er en observableCollection af vare, som bliver hentet/sættet for LagerstatusSingleton.
+        /// Instance sørger for at der kun kan være et aktuelt objekt af LagerstatusSingleton.
+        /// </summary>
         public ObservableCollection<Vare> VareOC { get; set; }
 
         public static LagerstatusSingleton Instance
@@ -55,7 +66,10 @@ namespace RFStorage.Model
         #endregion
 
 
-
+        #region TestMethod
+        /// <summary>
+        /// Creates Vare objekter og ligger dem i VareOC
+        /// </summary>
         public void test()
         {
             Vare vare1 = new Vare("navnTest1", 1, "Type1", 5, "vareTilstand");
@@ -68,10 +82,9 @@ namespace RFStorage.Model
             VareOC.Add(vare3);
             VareOC.Add(vare4);
             VareOC.Add(vare5);
-
         }
 
-        //Mangler add metode
+
 
     }
 }

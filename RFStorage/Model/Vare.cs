@@ -8,33 +8,27 @@ namespace RFStorage.Model
 {
     class Vare
     {
-        #region VareProp
-
-        //VareNavn
+        #region Properties
+        /// <summary>
+        /// Properties til Vare, Get/Set sørger for at hente eller sætte værdierne på instancefields med unikke for objekter.
+        /// </summary>
         public string VareNavn { get; set; }
-
-
-
-        //VareID
-        public int VareID { get; set; }
-
-        //Vare Type
+        public int VareID { get; set; }        
         public string VareType { get; set; }
-
-        //Antal
-        public int Antal { get; set; }
-
-        //VareTilstand
+        public int Antal { get; set; }      
         public string VareTilstand { get; set; }
 
         #endregion
 
-        #region VareConst
-
-
-
-
-        //Vare Constructor
+        #region Constructor
+        /// <summary>
+        /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
+        /// </summary>
+        /// <param name="vareNavn"></param>
+        /// <param name="vareId"></param>
+        /// <param name="vareType"></param>
+        /// <param name="antal"></param>
+        /// <param name="vareTilstand"></param>
         public Vare(string vareNavn, int vareId, string vareType, int antal, string vareTilstand)
         {
             VareNavn = vareNavn;

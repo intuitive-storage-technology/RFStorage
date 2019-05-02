@@ -9,7 +9,10 @@ namespace RFStorage.Model
 {
     class Kvittering
     {
-        #region KvitteringProp
+        #region Properties
+        /// <summary>
+        /// Properties til Kvitteringer, Get/Set sørger for at hente eller sætte værdierne på instancefields med unikke for objekter.
+        /// </summary>
         //public int Kvittering { get; set; }
         public int OrganisationID { get; set; }
         public ObservableCollection<Vare> Varelist;
@@ -17,7 +20,7 @@ namespace RFStorage.Model
 
         #endregion
 
-        #region MyRegion
+        #region Constructor
 
         public Kvittering()
         {
