@@ -71,5 +71,7 @@ namespace RFStorage.Model
 
         }
 
+        //Mangler add metode
+
     }
 }

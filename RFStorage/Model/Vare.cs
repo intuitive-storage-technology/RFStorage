@@ -45,5 +45,10 @@ namespace RFStorage.Model
         }
 
         #endregion
+
+        public override string ToString()
+        {
+            return $"{nameof(VareNavn)}: {VareNavn}, {nameof(VareID)}: {VareID}, {nameof(VareType)}: {VareType}, {nameof(Antal)}: {Antal}, {nameof(VareTilstand)}: {VareTilstand}";
+        }
     }
 }
