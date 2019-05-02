@@ -84,8 +84,7 @@ namespace RFStorage.Model
             VareOC.Add(vare5);
         }
 
-        #endregion
-       
+
 
     }
 }
