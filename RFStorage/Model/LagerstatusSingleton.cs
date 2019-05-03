@@ -27,9 +27,7 @@ namespace RFStorage.Model
 
 
         #region Instance Field
-        /// <summary>
-        /// Instance fields kan være faste værdier eller unikke værdier for objekter. 
-        /// </summary>
+        
         private static LagerstatusSingleton _instance = null;
 
         #endregion
@@ -83,7 +81,7 @@ namespace RFStorage.Model
             VareOC.Add(vare4);
             VareOC.Add(vare5);
         }
-
+        #endregion
 
 
     }

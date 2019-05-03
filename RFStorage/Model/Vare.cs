@@ -40,9 +40,18 @@ namespace RFStorage.Model
 
         #endregion
 
+        #region ToStringMethod
+
+        /// <summary>
+        /// Convertere Properties i klassen to String så de kan læses i View
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{nameof(VareNavn)}: {VareNavn}, {nameof(VareID)}: {VareID}, {nameof(VareType)}: {VareType}, {nameof(Antal)}: {Antal}, {nameof(VareTilstand)}: {VareTilstand}";
         }
+
+        #endregion
+        
     }
 }
