@@ -20,7 +20,7 @@ namespace RFStorage.Model
         #endregion
 
 
-        #region Construktor
+        #region Constructor
         /// <summary>
         /// /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
         /// </summary>
