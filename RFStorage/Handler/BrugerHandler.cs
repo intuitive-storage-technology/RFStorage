@@ -37,11 +37,8 @@ namespace RFStorage.Handler
             CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
             CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));
 
-            //var newEvent = new Event(EventViewModel.Id, EventViewModel.Name, EventViewModel.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(EventViewModel.Date, EventViewModel.Time), EventViewModel.Description);
-            //EventViewModel.EventCatalogSingleton.Add(newEvent);
-            //LagerstatusVM.LagerstatusSingleton.VareOC.Add(LagerstatusVM.VareID, LagerstatusVM.Antal, LagerstatusVM.VareNavn, LagerstatusVM.VareType, LagerstatusVM.VareTilstand);
-            // EventViewModel.EventCatalogSingleton.Add(EventViewModel.Id, EventViewModel.Name, EventViewModel.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(EventViewModel.Date, EventViewModel.Time), EventViewModel.Description);
-
+            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn, CreateRemoveBrugerVM.Password, CreateRemoveBrugerVM.BrugerType));
+            
         }
 
         public async void DeleteBruger()
