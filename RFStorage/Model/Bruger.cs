@@ -18,7 +18,6 @@ namespace RFStorage.Model
         public string Brugernavn { get; set; }
         public string Password { get; set; }
         public bool Type { get; set; }
-
         #endregion
 
         #region Constructor
@@ -26,16 +25,22 @@ namespace RFStorage.Model
         /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
         /// </summary>
         /// <param name="brugerID"></param>
-        /// <param name="brugerNavn"></param>
-        /// <param name="passWord"></param>
+        /// <param name="brugernavn"></param>
+        /// <param name="password"></param>
         /// <param name="type"></param>
-        public Bruger(string brugerID, string brugerNavn, string password, bool type)
+        public Bruger(string brugerID, string brugernavn, string password, bool type)
         {
             BrugerID = brugerID;
-            Brugernavn = brugerNavn;
+            Brugernavn = brugernavn;
             Password = password;
             Type = type;
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(BrugerID)}: {BrugerID}, {nameof(Brugernavn)}: {Brugernavn}, {nameof(Password)}: {Password}, {nameof(Type)}: {Type}";
+        }
+
         #endregion
 
     }

@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using RFStorage.Annotations;
 using RFStorage.Model;
+using RFStorage.RelayCommands;
 
 namespace RFStorage.ViewModel
 {
     class CreateRemoveBrugerVM : INotifyPropertyChanged
     {
         #region PropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -21,6 +23,7 @@ namespace RFStorage.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
 
         #region Instance Field
@@ -33,14 +36,15 @@ namespace RFStorage.ViewModel
         #endregion
 
         #region Properties
+
         public BrugerSingleton BrugerSingleton { get; set; }
         public Handler.BrugerHandler BrugerHandler { get; set; }
         public static Bruger SelectedBruger { get; set; }
 
         public string BrugerID { get; set; }
+        public string Brugernavn { get; set; }
         public string Password { get; set; }
         public bool BrugerType { get; set; }
-        //Brugernavn?
 
         #region ICommand
 
@@ -65,35 +69,19 @@ namespace RFStorage.ViewModel
             set { _deleteBrugerCommand = value; }
         }
 
-        /*public ICommand CreateVareCommand
+        public ICommand SelectedBrugerCommand
         {
             get
             {
-                if (_createVareCommand == null)
-                    _createVareCommand = new RelayCommands.RelayCommands(EventHandler.CreateVare);
-                return _createVareCommand;
+                return _selectedBrugerCommand ?? (SelectedBrugerCommand =
+                           new RelayArgsCommands<Bruger>(bruger => BrugerHandler.SetSelectedBruger(bruger)));
             }
-            set { _createVareCommand = value; }
-        }
-
-        public ICommand SelectedVareCommand
-        {
-            get
-            {
-                return _selectedVareCommand ?? (_selectedVareCommand =
-                           new RelayArgsCommands<Vare>(vare => EventHandler.SetSelectedVare(vare)));
-            }
-            set { _selectedVareCommand = value; }
-        }
-
-        public ICommand DeleteVareCommand
-        {
-            get { return _deleteVareCommand ?? (_deleteVareCommand = new RelayCommands.RelayCommands(EventHandler.DeleteVare)); }
-            set { _deleteVareCommand = value; }*/
+            set { _selectedBrugerCommand = value; }
         }
 
         #endregion
-        #endregion
 
+        #endregion
     }
+}
 
