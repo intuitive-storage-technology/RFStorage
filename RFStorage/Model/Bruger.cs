@@ -14,9 +14,9 @@ namespace RFStorage.Model
         /// Properties til Bruger, Get/Set sørger for at hente eller sætte værdierne på instancefields med unikke for objekter.
         /// </summary>
 
-        public int BrugerID { get; set; }
-        public string BrugerNavn { get; set; }
-        public string PassWord { get; set; }
+        public string BrugerID { get; set; }
+        public string Brugernavn { get; set; }
+        public string Password { get; set; }
         public bool Type { get; set; }
 
         #endregion
@@ -25,15 +25,15 @@ namespace RFStorage.Model
         /// <summary>
         /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
         /// </summary>
-        /// <param name="brugerId"></param>
+        /// <param name="brugerID"></param>
         /// <param name="brugerNavn"></param>
         /// <param name="passWord"></param>
         /// <param name="type"></param>
-        public Bruger(int brugerId, string brugerNavn, string passWord, bool type)
+        public Bruger(string brugerID, string brugerNavn, string password, bool type)
         {
-            BrugerID = brugerId;
-            BrugerNavn = brugerNavn;
-            PassWord = passWord;
+            BrugerID = brugerID;
+            Brugernavn = brugerNavn;
+            Password = password;
             Type = type;
         }
         #endregion
