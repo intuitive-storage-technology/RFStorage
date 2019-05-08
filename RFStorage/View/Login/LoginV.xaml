@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:RFStorage.ViewModel"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="RFStorage.View.Login.LoginV"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -36,7 +38,13 @@
             <PasswordBox x:Name="Password_Input" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="#99FFFFFF" BorderBrush="#99000000"/>
             <StackPanel x:Name="StackPanelButtons" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                 <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,20,0" MinHeight="32" MinWidth="64" Background="#CCFFFFFF" Foreground="Black"/>
-                <Button Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="64" Background="#CCFB7200" Foreground="Black"/>
+                <Button Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="64" Background="#CCFB7200" Foreground="Black">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:NavigateToPageAction TargetPage="RFStorage.MainPage" />
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Button>
             </StackPanel>
         </StackPanel>
 

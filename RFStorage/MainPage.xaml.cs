@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using RFStorage.View.LagerOgItem;
+using RFStorage.View.Login;
+using RFStorage.View.Organisation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +28,38 @@ namespace RFStorage
         public MainPage()
         {
             this.InitializeComponent();
+            Frame1.Navigate(typeof(LagerstatusV));
         }
+
+        private void ToLagerstatus(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(LagerstatusV));
+        }
+
+        private void ToUdlevering(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(OrganisationListeUdleveringV));
+        }
+
+        private void ToIndlevering(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(OrganisationListeIndleveringV));
+        }
+
+        private void ToCreateItem(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(CreateItemV));
+        }
+
+        private void ToEditItem(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(EditItemV));
+        }
+
+        private void ToCreateBruger(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(CreateRemoveUserV));
+        }
+
     }
 }
