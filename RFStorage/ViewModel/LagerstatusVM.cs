@@ -39,15 +39,16 @@ namespace RFStorage.ViewModel
         public string VareTilstand { get; set; }
 
         public LagerstatusSingleton LagerstatusSingleton { get; set; }
-        public static Vare SelectedEvent { get; set; }
-        public Handler.EventHandler EventHandler { get; set; }
+        public static Vare SelectedVare { get; set; }
+        //public Handler.EventHandler EventHandler { get; set; }
+        public Handler.VareHandler VareHandler { get; set; }
         #endregion
 
         #region LagerstatusConstruktor
 
         public LagerstatusVM()
         {
-            EventHandler = new Handler.EventHandler(this);
+            VareHandler = new Handler.VareHandler(this);
             LagerstatusSingleton = LagerstatusSingleton.Instance;
             
         }
@@ -72,7 +73,7 @@ namespace RFStorage.ViewModel
             get
             {
                 if (_createVareCommand == null)
-                    _createVareCommand = new RelayCommands.RelayCommands(EventHandler.CreateVare);
+                    _createVareCommand = new RelayCommands.RelayCommands(VareHandler.CreateVare);
                 return _createVareCommand;
             }
             set { _createVareCommand = value; }
@@ -83,14 +84,14 @@ namespace RFStorage.ViewModel
             get
             {
                 return _selectedVareCommand ?? (_selectedVareCommand =
-                           new RelayArgsCommands<Vare>(vare => EventHandler.SetSelectedVare(vare)));
+                           new RelayArgsCommands<Vare>(Vare => VareHandler.SetSelectedVare(Vare)));
             }
             set { _selectedVareCommand = value; }
         }
 
         public ICommand DeleteVareCommand
         {
-            get { return _deleteVareCommand ?? (_deleteVareCommand = new RelayCommands.RelayCommands(EventHandler.DeleteVare)); }
+            get { return _deleteVareCommand ?? (_deleteVareCommand = new RelayCommands.RelayCommands(VareHandler.DeleteVare)); }
             set { _deleteVareCommand = value; }
         }
 
