@@ -42,7 +42,7 @@
                 <AppBarButton x:Name="FremButton" Icon="Forward" Label="Frem" FlowDirection="RightToLeft"/>
             </CommandBar>
 
-            <Frame Name="Frame1" Content="" HorizontalAlignment="Center" Margin="0,48,0,0" VerticalAlignment="Top" Height="1032" Width="1920"/>
+            <Frame Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch"/>
 
         
     </Grid>
