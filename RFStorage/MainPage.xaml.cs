@@ -58,7 +58,7 @@ namespace RFStorage
 
         private void ToCreateBruger(object sender, RoutedEventArgs e)
         {
-            Frame1.Navigate(typeof(CreateRemoveUserV));
+            Frame1.Navigate(typeof(CreateRemoveBrugerV));
         }
 
     }
