@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Handler\BrugerHandler.cs" />
     <Compile Include="Handler\EventHandler.cs" />
+    <Compile Include="Handler\VareHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -171,6 +172,7 @@
   <ItemGroup>
     <Content Include="Assets\Roskilde-Festival-1080p-Sticker.jpg" />
     <Content Include="Assets\Roskilde-Festival-1080p-Team2.jpg" />
+    <Content Include="Assets\roskilde-festival-logo.png" />
     <Content Include="Assets\Team Materiel 4.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

@@ -30,6 +30,8 @@ namespace RFStorage.Model
         
         private static LagerstatusSingleton _instance = null;
 
+        public ObservableCollection<Vare> VareOC { get; set; }
+
         #endregion
 
 
@@ -51,7 +53,7 @@ namespace RFStorage.Model
         /// VareOC er en observableCollection af vare, som bliver hentet/sættet for LagerstatusSingleton.
         /// Instance sørger for at der kun kan være et aktuelt objekt af LagerstatusSingleton.
         /// </summary>
-        public ObservableCollection<Vare> VareOC { get; set; }
+
 
         public static LagerstatusSingleton Instance
         {
@@ -83,6 +85,11 @@ namespace RFStorage.Model
         }
         #endregion
 
-
+        //Remove and save to Persistancy
+        public void Remove(Vare vareToBeRomoved)
+        {
+            VareOC.Remove(vareToBeRomoved);
+            Persistency.PersistencyServices.SaveVaresAsJsonAsync(VareOC);
+        }
     }
 }
