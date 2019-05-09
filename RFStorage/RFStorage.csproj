@@ -150,8 +150,8 @@
     <Compile Include="View\LagerOgItem\LagerstatusV.xaml.cs">
       <DependentUpon>LagerstatusV.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Login\CreateRemoveBrugerV.xaml.cs">
-      <DependentUpon>CreateRemoveBrugerV.xaml</DependentUpon>
+    <Compile Include="View\Login\CreateRemoveUserV.xaml.cs">
+      <DependentUpon>CreateRemoveUserV.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login\LoginV.xaml.cs">
       <DependentUpon>LoginV.xaml</DependentUpon>
@@ -204,7 +204,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Login\CreateRemoveBrugerV.xaml">
+    <Page Include="View\Login\CreateRemoveUserV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
