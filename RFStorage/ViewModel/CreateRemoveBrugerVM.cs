@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using RFStorage.Annotations;
+using RFStorage.Handler;
 using RFStorage.Model;
 using RFStorage.RelayCommands;
 
@@ -32,6 +33,15 @@ namespace RFStorage.ViewModel
         private ICommand _createBrugerCommand;
         private ICommand _deleteBrugerCommand;
 
+        #endregion
+
+        #region Constructor
+
+        public CreateRemoveBrugerVM()
+        {
+            BrugerSingleton = BrugerSingleton.Instance;
+            BrugerHandler = new Handler.BrugerHandler(this);
+        }
 
         #endregion
 
@@ -44,7 +54,7 @@ namespace RFStorage.ViewModel
         public string BrugerID { get; set; }
         public string Brugernavn { get; set; }
         public string Password { get; set; }
-        public bool BrugerType { get; set; }
+        public bool Type { get; set; }
 
         #region ICommand
 
