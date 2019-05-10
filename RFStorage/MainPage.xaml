@@ -6,26 +6,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:login="using:RFStorage.View.Login"
-    xmlns:serviceModel="using:System.ServiceModel"
     x:Class="RFStorage.MainPage"
-    mc:Ignorable="d" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d"  
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-        <NavigationView x:Name="MenuBar" HorizontalAlignment="Left" VerticalAlignment="Stretch" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True">
-            <NavigationView.MenuItems>
-                <NavigationViewItem x:Name="LagerstatusItem" Content="Lagerstatus" Tapped="ToLagerstatus"/>
-                <NavigationViewItem x:Name="UdleveringItem" Content="Udlevering" Tapped="ToUdlevering"/>
-                <NavigationViewItem x:Name="TilbageleveringItem" Content="Tilbagelevering" Tapped="ToIndlevering"/>
-                <NavigationViewItemSeparator x:Name="AdminSection"/>
-                <NavigationViewItem x:Name="CreateVareItem" Content="Opret vare" Tapped="ToCreateVare"/>
-                <NavigationViewItem x:Name="EditVareItem" Content="Redigér vare" Tapped="ToEditVare"/>
-                <NavigationViewItem x:Name="CreateRemoveBrugerItem" Content="Opret/Slet bruger" Tapped="ToCreateRemoveBruger"/>
-                <NavigationViewItemSeparator/>
-                <NavigationViewItem x:Name="SettingsItem" Content="Indstillinger"/>
-                <NavigationViewItem x:Name="AboutItem" Content="Om"/>
-                <NavigationViewItem x:Name="LogoutItem" Content="Log ud" Tapped="ToLogin"/>
-            </NavigationView.MenuItems>
-        </NavigationView>
-        <Frame x:Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch"/>
+    <Grid HorizontalAlignment="Center" Height="1080" Margin="0,0,0,0" VerticalAlignment="Center" Width="1920">
+        
+
+            <CommandBar x:Name="MenuBar" DefaultLabelPosition="Right" FlowDirection="LeftToRight" VerticalContentAlignment="Top">
+                <CommandBar.SecondaryCommands>
+                    <AppBarButton x:Name="LagerstatusButton" Label="Lagerstatus" Margin="0,0,0,0" VerticalAlignment="Center" Click="ToLagerstatus"/>
+                    <AppBarButton x:Name="UdleveringButton" Label="Udlevering" Margin="0,0,0,0" VerticalAlignment="Top" Click="ToUdlevering"/>
+                    <AppBarButton x:Name="TilbageleveringButton" Label="Tilbagelevering" Margin="0,0,0,0" VerticalAlignment="Top" Click="ToIndlevering"/>
+                    <AppBarSeparator x:Name="AdminSection" Margin="0,0,0,0"/>
+                    <AppBarButton x:Name="CreateVareButton" Label="Opret vare" Margin="0,0,0,0" VerticalAlignment="Top" Click="ToCreateItem"/>
+                    <AppBarButton x:Name="EditVareButton" Label="Rediger vare" Margin="0,0,0,0" VerticalAlignment="Top" Click="ToEditItem"/>
+                    <AppBarButton x:Name="CreateBrugerButton" Label="Opret bruger" Margin="0,0,0,0" VerticalAlignment="Top" Click="ToCreateBruger"/>
+                    <AppBarSeparator x:Name="MiscSection" Margin="0,0,0,0"/>
+                    <AppBarButton x:Name="AboutButton" Label="About" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    <AppBarButton x:Name="SettingsButton" Label="Indstillinger" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    <AppBarButton x:Name="LogoutButton" Label="Log ud" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Interactivity:Interaction.Behaviors>
+                            <Core:EventTriggerBehavior EventName="Click">
+                                <Core:NavigateToPageAction TargetPage="RFStorage.View.Login.LoginV"/>
+                            </Core:EventTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+                    </AppBarButton>
+                </CommandBar.SecondaryCommands>
+                <CommandBar.Content>
+                    <Grid>
+                        <Image Height="39" Margin="5,5,0,0" VerticalAlignment="Center" Source="/Assets/roskilde-festival-logo.png" Stretch="Uniform" RenderTransformOrigin="0.487,0.857" HorizontalAlignment="Stretch"/>
+                    </Grid>
+                </CommandBar.Content>
+                <AppBarButton x:Name="TilbageButton" Icon="Back" Label="Tilbage"/>
+                <AppBarButton x:Name="FremButton" Icon="Forward" Label="Frem" FlowDirection="RightToLeft"/>
+            </CommandBar>
+
+            <Frame Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch"/>
+
+        
     </Grid>
+
 </Page>
