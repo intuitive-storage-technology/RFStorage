@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Xaml.Interactions.Core;
 using RFStorage.View.LagerOgItem;
 using RFStorage.View.Login;
 using RFStorage.View.Organisation;
@@ -30,41 +29,37 @@ namespace RFStorage
         {
             this.InitializeComponent();
             Frame1.Navigate(typeof(LagerstatusV));
-        }      
+        }
 
-        private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
+        private void ToLagerstatus(object sender, RoutedEventArgs e)
         {
             Frame1.Navigate(typeof(LagerstatusV));
         }
 
-        private void ToUdlevering(object sender, TappedRoutedEventArgs e)
+        private void ToUdlevering(object sender, RoutedEventArgs e)
         {
             Frame1.Navigate(typeof(OrganisationListeUdleveringV));
         }
 
-        private void ToIndlevering(object sender, TappedRoutedEventArgs e)
+        private void ToIndlevering(object sender, RoutedEventArgs e)
         {
             Frame1.Navigate(typeof(OrganisationListeIndleveringV));
         }
 
-        private void ToCreateVare(object sender, TappedRoutedEventArgs e)
+        private void ToCreateItem(object sender, RoutedEventArgs e)
         {
             Frame1.Navigate(typeof(CreateItemV));
         }
 
-        private void ToEditVare(object sender, TappedRoutedEventArgs e)
+        private void ToEditItem(object sender, RoutedEventArgs e)
         {
             Frame1.Navigate(typeof(EditItemV));
         }
 
-        private void ToCreateRemoveBruger(object sender, TappedRoutedEventArgs e)
+        private void ToCreateBruger(object sender, RoutedEventArgs e)
         {
             Frame1.Navigate(typeof(CreateRemoveBrugerV));
         }
 
-        private void ToLogin(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(LoginV));
-        }
     }
 }
