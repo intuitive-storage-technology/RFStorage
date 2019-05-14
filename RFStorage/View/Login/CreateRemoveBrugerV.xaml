@@ -13,72 +13,149 @@
         <viewModel:CreateRemoveBrugerVM/>
     </Page.DataContext>
 
-    <ScrollViewer>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <RelativePanel x:Name="EksisterendeBrugereRelativePanel"
-                           HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
 
-                <ListView x:Name="BrugerListview"
-                          Header="Brugere"
+        <RelativePanel x:Name="EksisterendeBrugereRelativePanel"
+                       HorizontalAlignment="Stretch"
+                       Margin="50,50,0,0"
+                       Grid.Row="1">
+
+            <TextBlock x:Name="BrugereHeader"
+                       Text="Brugere"
+                       FontWeight="Bold">
+            </TextBlock>
+            <ListView x:Name="BrugerListview"
                           ItemsSource="{Binding BrugerSingleton.BrugerOC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           SelectedItem="{Binding SelectedBruger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
-                          Height="700"
-                          Width="600"
-                          Margin="0,100,0,0">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <RelativePanel x:Name="BrugerDataTemplate"
-                                           Margin="0,5,0,0">
-                                <TextBlock x:Name="Brugernavn"
+                      RelativePanel.Below="BrugereHeader"
+                      MaxWidth="600"
+                      MaxHeight="650">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <RelativePanel x:Name="BrugerDataTemplate"
+                                           Margin="0,20,0,0">
+                            <TextBlock x:Name="Brugernavn"
                                            Text="{Binding Brugernavn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                            FontWeight="Bold"
                                            TextWrapping="Wrap">
-                                </TextBlock>
-                                <TextBlock x:Name="BrugerID"
+                            </TextBlock>
+                            <TextBlock x:Name="BrugerID"
                                            Text="{Binding BrugerID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                            TextWrapping="Wrap"
                                            RelativePanel.Below="Brugernavn">
-                                </TextBlock>
-                                <TextBlock x:Name="BrugerType"
-                                           Text="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            </TextBlock>
+                            <TextBlock x:Name="BrugerType"
+                                           Text="{Binding BrugerTypeMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                            TextWrapping="Wrap"
-                                           RelativePanel.Below="Brugernavn"
-                                           RelativePanel.LeftOf="BrugerID">
-                                </TextBlock>
-                            </RelativePanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                       RelativePanel.Below="Brugernavn"
+                                       RelativePanel.RightOf="BrugerID"
+                                       Margin="20,0,0,0">
+                            </TextBlock>
+                        </RelativePanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-                <RelativePanel x:Name="Buttons"
+            <RelativePanel x:Name="Buttons"
                       RelativePanel.Below="BrugerListview"
                       Margin="0,20,0,0">
 
-                    <Button x:Name="SletBruger"
+                <Button x:Name="SletBruger"
                             Content="Slet Bruger"
                             HorizontalAlignment="Center"
                             Command="{Binding DeleteBrugerCommand}">
 
-                    </Button>
-                    <Button x:Name="OpdaterBruger"
+                </Button>
+                <Button x:Name="OpdaterBruger"
                             Content="Opdater Bruger"
                             HorizontalAlignment="Center"
-                            Command="{Binding CreateBrugerCommand}"
                             RelativePanel.RightOf="SletBruger"
                             Margin="50,0,0,0">
-                    </Button>
-                </RelativePanel>
+                    <!-- knappen skal bindes til en update version ude til højre-->
+                </Button>
+            </RelativePanel>
+        </RelativePanel>
+
+        <RelativePanel x:Name="CreateBruger"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       Width="600"
+                       Margin="0,50,0,0"
+                       Grid.Row="1">
+
+            <RelativePanel x:Name="NyBrugerInfo">
+
+                <TextBlock x:Name="LavNyBruger"
+                       Text="Ny Bruger"
+                       FontWeight="Bold">
+                </TextBlock>
+                <TextBox x:Name="Brugernavn"
+                     Header="Brugernavn"
+                     PlaceholderText="Brugernavn"
+                     TextWrapping="Wrap"
+                     RelativePanel.Below="LavNyBruger"
+                     Margin="0,50,0,0"
+                     Text="{Binding Brugernavn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </TextBox>
+                <TextBox x:Name="BrugerID"
+                     Header="BrugerID"
+                     PlaceholderText="BrugerID"
+                     TextWrapping="Wrap"
+                     RelativePanel.RightOf="Brugernavn"
+                     RelativePanel.Below="LavNyBruger"
+                     Margin="50,50,0,0"
+                     Text="{Binding BrugerID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </TextBox>
+                <TextBox x:Name="BrugerPassword"
+                     Header="Password"
+                     PlaceholderText="Password"
+                     TextWrapping="Wrap"
+                     RelativePanel.Below="Brugernavn"
+                     Margin="0,50,0,0"
+                     Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </TextBox>
+                <CheckBox x:Name="AdminCheckbox"
+                      Content="Er denne bruger en admin?"                      
+                      RelativePanel.Below="Brugernavn"
+                      RelativePanel.AlignLeftWith="BrugerID"
+                      RelativePanel.RightOf="BrugerPassword"
+                      RelativePanel.AlignBottomWith="BrugerPassword"
+                      Margin="50,50,0,0"
+                          IsChecked="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                </CheckBox>
             </RelativePanel>
 
 
-            <!--<ListView Margin="331,241,337,242" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding BrugerSingleton.BrugerOC}"/>-->
+            <RelativePanel x:Name="NyBrugerButtons"
+                           RelativePanel.Below="NyBrugerInfo"
+                           Margin="0,50,0,0">
+                <Button x:Name="CancelNyBruger"
+                    Content="Fortryd"
+                    HorizontalAlignment="Center">
+                </Button>
+                <Button x:Name="OpretNyBruger"
+                        Content="Opret Ny Bruger"
+                        HorizontalAlignment="Center"
+                        RelativePanel.RightOf="CancelNyBruger"
+                        Margin="50,0,0,0"
+                        Command="{Binding CreateBrugerCommand}"></Button>
+                <!-- Knappen her bindes til CreateBruger, men metoden skal laves om uden dummydata-->
+            </RelativePanel>
+        </RelativePanel>
 
-            <!--<Button x:Name="Users" Content="Show Users" HorizontalAlignment="Left" Margin="610,796,0,0" VerticalAlignment="Top" Width="275" Height="89" Command="{Binding CreateBrugerCommand}"></Button>-->
-        </Grid>
-    </ScrollViewer>
+
+        <!--<ListView Margin="331,241,337,242" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding BrugerSingleton.BrugerOC}"/>-->
+
+        <!--<Button x:Name="Users" Content="Show Users" HorizontalAlignment="Left" Margin="610,796,0,0" VerticalAlignment="Top" Width="275" Height="89" Command="{Binding CreateBrugerCommand}"></Button>-->
+    </Grid>
 </Page>

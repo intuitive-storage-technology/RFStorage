@@ -32,12 +32,12 @@ namespace RFStorage.Handler
 
         public void CreateBruger()
         {
-            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
-            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
-            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
-            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));
+            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
+            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
+            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
+            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));
 
-            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn, CreateRemoveBrugerVM.Password, CreateRemoveBrugerVM.BrugerType));
+            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn, CreateRemoveBrugerVM.Password, CreateRemoveBrugerVM.Type));
             
         }
 
