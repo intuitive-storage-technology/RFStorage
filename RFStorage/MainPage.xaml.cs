@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,6 +31,7 @@ namespace RFStorage
             this.InitializeComponent();
             Frame1.Navigate(typeof(LagerstatusV));
         }      
+
 
         private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
         {
