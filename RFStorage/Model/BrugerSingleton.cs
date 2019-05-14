@@ -12,28 +12,12 @@ namespace RFStorage.Model
 {
     class BrugerSingleton : INotifyPropertyChanged
     {
-        #region PropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
 
         #region Instance Field
         private static BrugerSingleton _instance = null;
         #endregion
-
-        #region Constuctor
         
-        private BrugerSingleton()
-        {
-            BrugerOC = new ObservableCollection<Bruger>();
-        }
-        #endregion
-
         #region Properties
 
         public static BrugerSingleton Instance
@@ -49,5 +33,34 @@ namespace RFStorage.Model
 
         #endregion
 
+        #region Constuctor
+
+        private BrugerSingleton()
+        {
+            BrugerOC = new ObservableCollection<Bruger>();
+        }
+        #endregion
+
+        #region Methods
+
+        public void BrugereTest()
+        {
+            BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
+            BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
+            BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
+            BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));
+        }
+
+        #endregion
+
+        #region PropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }

@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using RFStorage.Model;
+using RFStorage.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +27,11 @@ namespace RFStorage.View.Login
         public CreateRemoveBrugerV()
         {
             this.InitializeComponent();
+        }
+
+        private void AdminCheckbox_OnChecked(object sender, RoutedEventArgs e)
+        {
+            AdminCheckbox.IsChecked = true;
         }
     }
 }
