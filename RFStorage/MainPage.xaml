@@ -10,7 +10,7 @@
     mc:Ignorable="d"  
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid HorizontalAlignment="Center" Height="1080" Margin="0,0,0,0" VerticalAlignment="Center" Width="1920">
+    <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
         
 
             <CommandBar x:Name="MenuBar" DefaultLabelPosition="Right" FlowDirection="LeftToRight" VerticalContentAlignment="Top">

@@ -28,7 +28,7 @@ namespace RFStorage
         public MainPage()
         {
             this.InitializeComponent();
-            Frame1.Navigate(typeof(LagerstatusV));
+            Frame1.Navigate(typeof(CreateItemV));
         }
 
         private void ToLagerstatus(object sender, RoutedEventArgs e)

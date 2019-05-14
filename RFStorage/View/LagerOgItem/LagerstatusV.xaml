@@ -14,9 +14,15 @@
     </Page.DataContext>
 
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="645,725,0,0" VerticalAlignment="Top" Width="355" Command="{Binding CreateVareCommand}"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="450" Margin="545,270,0,0" VerticalAlignment="Top" Width="550" ItemsSource="{Binding LagerstatusSingleton.VareOC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedVare}" />
-        <Button x:Name="DeleteVarebutton" Content="Button" Margin="320,0,0,199" VerticalAlignment="Bottom" Height="76" Width="260" Command="{Binding DeleteVareCommand}"/>
+
+        <!--List and selected-->
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="450" Margin="545,270,0,0" VerticalAlignment="Top" Width="550" 
+         ItemsSource="{Binding LagerstatusSingleton.VareOC, 
+         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+         SelectedItem="{Binding SelectedVare, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" />
+
+        <!--CreateVare-->
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="645,725,0,0" VerticalAlignment="Top" Width="355" Command="{Binding CreateVareCommand, UpdateSourceTrigger=PropertyChanged}"/>
 
 
     </Grid>

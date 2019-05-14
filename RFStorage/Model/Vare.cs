@@ -15,8 +15,8 @@ namespace RFStorage.Model
         public string VareNavn { get; set; }
         public int VareID { get; set; }        
         public string VareType { get; set; }
-        public int Antal { get; set; }      
-        public string VareTilstand { get; set; }
+        public int VareAntal { get; set; }      
+        //public string VareTilstand { get; set; }
 
         #endregion
 
@@ -29,13 +29,13 @@ namespace RFStorage.Model
         /// <param name="vareType"></param>
         /// <param name="antal"></param>
         /// <param name="vareTilstand"></param>
-        public Vare(string vareNavn, int vareId, string vareType, int antal, string vareTilstand)
+        public Vare(string vareNavn, int vareId, string vareType, int vareantal)
         {
             VareNavn = vareNavn;
             VareID = vareId;
             VareType = vareType;
-            Antal = antal;
-            VareTilstand = vareTilstand;
+            VareAntal = vareantal;
+            //VareTilstand = vareTilstand;
         }
 
         #endregion
@@ -48,7 +48,7 @@ namespace RFStorage.Model
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{nameof(VareNavn)}: {VareNavn}, {nameof(VareID)}: {VareID}, {nameof(VareType)}: {VareType}, {nameof(Antal)}: {Antal}, {nameof(VareTilstand)}: {VareTilstand}";
+            return $"{nameof(VareNavn)}: {VareNavn}, {nameof(VareID)}: {VareID}, {nameof(VareType)}: {VareType}, {nameof(VareAntal)}: {VareAntal} ";
         }
 
         #endregion
