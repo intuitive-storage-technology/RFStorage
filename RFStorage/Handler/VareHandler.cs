@@ -11,33 +11,25 @@ namespace RFStorage.Handler
 {
     class VareHandler
     {
-        public string VareNavn { get; set; }
-        public int VareID { get; set; }
-        public string VareType { get; set; }
-        public int VareAntal { get; set; }
-
-
-        #region Properties
+        //
         public LagerstatusVM LagerstatusVM { get; set; }
-        #endregion
 
-        #region Construktor
-
+        //Construktor
         public VareHandler(LagerstatusVM lagerstatusVm)
         {
             LagerstatusVM = lagerstatusVm;
         }
-
-        #endregion
 
         //methods
 
         //Create
         public void CreateVare()
         {
-
-         Vare vare = new Vare(VareNavn, VareID, VareType, VareAntal);
-         LagerstatusSingleton.Instance.VareOC.Add(vare);
+            LagerstatusVM.LagerstatusSingleton.VareOC.Add(new Vare("Test1", 1, "type", 1, "Supergod"));
+            LagerstatusVM.LagerstatusSingleton.VareOC.Add(new Vare("Test2", 1, "type", 1, "Supergod"));
+            LagerstatusVM.LagerstatusSingleton.VareOC.Add(new Vare("Test3", 1, "type", 1, "Supergod"));
+            LagerstatusVM.LagerstatusSingleton.VareOC.Add(new Vare("Test4", 1, "type", 1, "Supergod"));
+            
         }
 
         public void SetSelectedVare(Vare vare)

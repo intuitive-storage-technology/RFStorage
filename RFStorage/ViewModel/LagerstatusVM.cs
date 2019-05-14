@@ -15,6 +15,10 @@ namespace RFStorage.ViewModel
 {
     class LagerstatusVM : INotifyPropertyChanged
     {
+        private ICommand _createVareCommand;
+        private ICommand _selectedVareCommand;
+        private ICommand _deleteVareCommand;
+
 
         #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -27,41 +31,31 @@ namespace RFStorage.ViewModel
 
         #endregion
 
-        #region Instance field
-        
-        private ICommand _createVareCommand;
-        private ICommand _selectedVareCommand;
-        private ICommand _deleteVareCommand;
-
-        #endregion
-
         #region Prop
         public string VareNavn { get; set; }
         public int VareID { get; set; }
         public string VareType { get; set; }
-        public int VareAntal { get; set; }
-        //public string VareTilstand { get; set; }
+        public int Antal { get; set; }
+        public string VareTilstand { get; set; }
 
         public LagerstatusSingleton LagerstatusSingleton { get; set; }
-        public Handler.VareHandler VareHandler { get; set; }
         public static Vare SelectedVare { get; set; }
-
+        //public Handler.EventHandler EventHandler { get; set; }
+        public Handler.VareHandler VareHandler { get; set; }
         #endregion
 
-        #region Constructor
-        
+        #region LagerstatusConstruktor
 
-        public LagerstatusVM() 
+        public LagerstatusVM()
         {
             VareHandler = new Handler.VareHandler(this);
             LagerstatusSingleton = LagerstatusSingleton.Instance;
             
         }
 
+
         #endregion
 
-        #region Test
-        
         public void Test()
         {
             LagerstatusSingleton.test();
@@ -71,8 +65,6 @@ namespace RFStorage.ViewModel
         {
             LagerstatusSingleton.test();
         }
-
-        #endregion
 
         #region Icommand
 
