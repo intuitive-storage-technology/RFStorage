@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,26 +12,23 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Xaml.Interactions.Core;
 using RFStorage.View.LagerOgItem;
 using RFStorage.View.Login;
 using RFStorage.View.Organisation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace RFStorage
+namespace RFStorage.View.NavigationsSystem
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class FrivilligNavigationV : Page
     {
-        public MainPage()
+        public FrivilligNavigationV()
         {
             this.InitializeComponent();
-            Frame1.Navigate(typeof(LagerstatusV));
-        }      
-
+        }
 
         private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
         {
@@ -48,20 +45,7 @@ namespace RFStorage
             Frame1.Navigate(typeof(OrganisationListeIndleveringV));
         }
 
-        private void ToCreateVare(object sender, TappedRoutedEventArgs e)
-        {
-            Frame1.Navigate(typeof(CreateItemV));
-        }
 
-        private void ToEditVare(object sender, TappedRoutedEventArgs e)
-        {
-            Frame1.Navigate(typeof(EditItemV));
-        }
-
-        private void ToCreateRemoveBruger(object sender, TappedRoutedEventArgs e)
-        {
-            Frame1.Navigate(typeof(CreateRemoveBrugerV));
-        }
 
         private void ToLogin(object sender, TappedRoutedEventArgs e)
         {

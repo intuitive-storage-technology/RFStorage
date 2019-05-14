@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -155,6 +155,9 @@
     <Compile Include="View\Login\LoginV.xaml.cs">
       <DependentUpon>LoginV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NavigationsSystem\FrivilligNavigationV.xaml.cs">
+      <DependentUpon>FrivilligNavigationV.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Organisation\OrganisationListeIndleveringV.xaml.cs">
       <DependentUpon>OrganisationListeIndleveringV.xaml</DependentUpon>
     </Compile>
@@ -171,7 +174,7 @@
   <ItemGroup>
     <Content Include="Assets\Roskilde-Festival-1080p-Sticker.jpg" />
     <Content Include="Assets\Roskilde-Festival-1080p-Team2.jpg" />
-    <Content Include="Assets\roskilde-festival-logo.png" />
+    <EmbeddedResource Include="Assets\roskilde-festival-logo.png" />
     <Content Include="Assets\Team Materiel 4.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -208,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login\LoginV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NavigationsSystem\FrivilligNavigationV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
