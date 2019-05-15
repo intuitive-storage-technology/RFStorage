@@ -35,31 +35,37 @@ namespace RFStorage
         private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(LagerstatusV));
+            MenuBar.Header = "Lagerstatus";
         }
 
         private void ToUdlevering(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(OrganisationListeUdleveringV));
+            MenuBar.Header = "Udlevering";
         }
 
         private void ToIndlevering(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(OrganisationListeIndleveringV));
+            MenuBar.Header = "Tilbagelevering";
         }
 
         private void ToCreateVare(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(CreateItemV));
+            MenuBar.Header = "Opret vare";
         }
 
         private void ToEditVare(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(EditItemV));
+            MenuBar.Header = "Redigér vare";
         }
 
         private void ToCreateRemoveBruger(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(CreateRemoveBrugerV));
+            MenuBar.Header = "Opret bruger";
         }
 
         private void ToLogin(object sender, TappedRoutedEventArgs e)

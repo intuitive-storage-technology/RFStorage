@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Handler\BrugerHandler.cs" />
     <Compile Include="Handler\EventHandler.cs" />
+    <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\VareHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
