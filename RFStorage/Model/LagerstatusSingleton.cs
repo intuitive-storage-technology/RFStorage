@@ -27,7 +27,7 @@ namespace RFStorage.Model
 
 
         #region Instance Field
-        
+
         private static LagerstatusSingleton _instance = null;
 
         public ObservableCollection<Vare> VareOC { get; set; }
@@ -72,11 +72,11 @@ namespace RFStorage.Model
         /// </summary>
         public void test()
         {
-            Vare vare1 = new Vare("navnTest1", 1, "Type1", 5, "vareTilstand");
-            Vare vare2 = new Vare("navnTest1", 1, "Type1", 5, "vareTilstand");
-            Vare vare3 = new Vare("navnTest1", 1, "Type1", 5, "vareTilstand");
-            Vare vare4 = new Vare("navnTest1", 1, "Type1", 5, "vareTilstand");
-            Vare vare5 = new Vare("navnTest1", 1, "Type1", 5, "vareTilstand");
+            Vare vare1 = new Vare("NavnTest1", 1, "VareType1", 1);
+            Vare vare2 = new Vare("NavnTest1", 1, "VareType1", 1);
+            Vare vare3 = new Vare("NavnTest1", 1, "VareType1", 1);
+            Vare vare4 = new Vare("NavnTest1", 1, "VareType1", 1);
+            Vare vare5 = new Vare("NavnTest1", 1, "VareType1", 1);
             VareOC.Add(vare1);
             VareOC.Add(vare2);
             VareOC.Add(vare3);
