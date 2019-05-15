@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using RFStorage.View.NavigationsSystem;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +26,11 @@ namespace RFStorage.View.Login
         public LoginV()
         {
             this.InitializeComponent();
+        }
+
+        private void ToNavigation(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
