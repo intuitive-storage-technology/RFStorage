@@ -11,17 +11,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
-        <ViewModel:LogInVM/>
+        <ViewModel:CreateRemoveBrugerVM/>
     </Page.DataContext>
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Roskilde-Festival-1080p-Sticker.jpg"/>
+            <ImageBrush Stretch="None" ImageSource="ms-appx:///Assets/Roskilde-Festival-1080p-Sticker.jpg"/>
         </Grid.Background>
 
-        <Grid.DataContext>
-            <ViewModel:LogInVM/>
-        </Grid.DataContext>
+        
         <StackPanel x:Name="StackPanelBackground" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Padding="40">
             <StackPanel.Background>
                 <SolidColorBrush Color="White" Opacity="0.4"/>
@@ -33,18 +31,12 @@
             </Image>
 
             <TextBlock x:Name="Username" TextWrapping="Wrap" Text="Username:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10" Foreground="Black"/>
-            <TextBox x:Name="Username_Input" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="#99FFFFFF" BorderBrush="#99000000"/>
+            <TextBox x:Name="Username_Input" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="White" BorderBrush="#99000000"/>
             <TextBlock x:Name="Password" TextWrapping="Wrap" Text="Password:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10" Foreground="Black"/>
-            <PasswordBox x:Name="Password_Input" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="#99FFFFFF" BorderBrush="#99000000"/>
+            <PasswordBox x:Name="Password_Input" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="White" BorderBrush="#99000000"/>
             <StackPanel x:Name="StackPanelButtons" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                 <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,20,0" MinHeight="32" MinWidth="64" Background="#CCFFFFFF" Foreground="Black"/>
-                <Button Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="64" Background="#CCFB7200" Foreground="Black">
-                    <interactivity:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Click">
-                            <core:NavigateToPageAction TargetPage="RFStorage.MainPage" />
-                        </core:EventTriggerBehavior>
-                    </interactivity:Interaction.Behaviors>
-                </Button>
+                <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="64" Background="#CCFB7200" Foreground="Black" Click="ToNavigation"/>
             </StackPanel>
         </StackPanel>
 

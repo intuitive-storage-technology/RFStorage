@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -15,33 +16,11 @@ namespace RFStorage.ViewModel
 {
     class CreateRemoveBrugerVM : INotifyPropertyChanged
     {
-        #region PropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion
-
         #region Instance Field
 
         private ICommand _selectedBrugerCommand;
         private ICommand _createBrugerCommand;
         private ICommand _deleteBrugerCommand;
-
-        #endregion
-
-        #region Constructor
-
-        public CreateRemoveBrugerVM()
-        {
-            BrugerSingleton = BrugerSingleton.Instance;
-            BrugerHandler = new Handler.BrugerHandler(this);
-        }
 
         #endregion
 
@@ -92,6 +71,31 @@ namespace RFStorage.ViewModel
         #endregion
 
         #endregion
+
+        #region Constructor
+
+        public CreateRemoveBrugerVM()
+        {
+            BrugerSingleton = BrugerSingleton.Instance;
+            BrugerHandler = new Handler.BrugerHandler(this);
+            BrugerSingleton.BrugereTest();
+        }
+
+        #endregion
+        
+
+        #region PropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #endregion
+
     }
 }
 
