@@ -61,5 +61,9 @@ namespace RFStorage
             Frame1.Navigate(typeof(CreateRemoveBrugerV));
         }
 
+        private void Forsøg_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame1.Navigate(typeof(UdleveringsSide));
+        }
     }
 }

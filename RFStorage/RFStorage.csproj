@@ -119,8 +119,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\ContainsExtension.cs" />
     <Compile Include="Handler\BrugerHandler.cs" />
     <Compile Include="Handler\EventHandler.cs" />
+    <Compile Include="Handler\OrganHandler.cs" />
     <Compile Include="Handler\VareHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -131,6 +133,7 @@
     <Compile Include="Model\LagerstatusSingleton.cs" />
     <Compile Include="Model\Ordre.cs" />
     <Compile Include="Model\Organisation.cs" />
+    <Compile Include="Model\OrganisationsSingleton.cs" />
     <Compile Include="Model\Vare.cs" />
     <Compile Include="Persistency\PersistencyServices.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -141,6 +144,7 @@
     <Compile Include="ViewModel\LagerstatusVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\OrdreVM.cs" />
+    <Compile Include="ViewModel\OrganisationVM.cs" />
     <Compile Include="View\LagerOgItem\CreateItemV.xaml.cs">
       <DependentUpon>CreateItemV.xaml</DependentUpon>
     </Compile>
@@ -161,6 +165,12 @@
     </Compile>
     <Compile Include="View\Organisation\OrganisationListeUdleveringV.xaml.cs">
       <DependentUpon>OrganisationListeUdleveringV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Organisation\OrganisationSøgUdlevering.xaml.cs">
+      <DependentUpon>OrganisationSøgUdlevering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Organisation\UdleveringsSide.xaml.cs">
+      <DependentUpon>UdleveringsSide.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +230,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Organisation\OrganisationSøgUdlevering.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Organisation\UdleveringsSide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -232,9 +250,7 @@
       <Version>12.0.2</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converter\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

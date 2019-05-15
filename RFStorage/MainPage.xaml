@@ -10,7 +10,7 @@
     mc:Ignorable="d"  
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid HorizontalAlignment="Center" Height="1080" Margin="0,0,0,0" VerticalAlignment="Center" Width="1920">
+    <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
         
 
             <CommandBar x:Name="MenuBar" DefaultLabelPosition="Right" FlowDirection="LeftToRight" VerticalContentAlignment="Top">
@@ -44,7 +44,7 @@
 
             <Frame Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch"/>
 
-        
+        <Button x:Name="Forsøg" Height="200" Width="200" Click="Forsøg_OnClick"></Button>
     </Grid>
 
 </Page>

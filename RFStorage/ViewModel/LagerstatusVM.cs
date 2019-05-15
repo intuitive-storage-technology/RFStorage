@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -39,9 +40,12 @@ namespace RFStorage.ViewModel
         public string VareTilstand { get; set; }
 
         public LagerstatusSingleton LagerstatusSingleton { get; set; }
+        
+        
         public static Vare SelectedVare { get; set; }
         //public Handler.EventHandler EventHandler { get; set; }
         public Handler.VareHandler VareHandler { get; set; }
+        
         #endregion
 
         #region LagerstatusConstruktor
@@ -50,7 +54,8 @@ namespace RFStorage.ViewModel
         {
             VareHandler = new Handler.VareHandler(this);
             LagerstatusSingleton = LagerstatusSingleton.Instance;
-            
+           
+
         }
 
 
