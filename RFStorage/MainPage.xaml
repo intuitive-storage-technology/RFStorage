@@ -314,7 +314,6 @@
             </Setter>
         </Style>
     </Page.Resources>
-
     <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
         <Frame x:Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch">
             <Frame.ContentTransitions>
@@ -323,7 +322,6 @@
                 </TransitionCollection>
             </Frame.ContentTransitions>
         </Frame>
-
         <NavigationView Style="{StaticResource NavigationViewStyle1}" x:Name="MenuBar" HorizontalAlignment="Left" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" FocusVisualPrimaryBrush="{ThemeResource SystemControlFocusVisualPrimaryBrush}" FocusVisualSecondaryBrush="{ThemeResource AppBarToggleButtonCheckedDisabledForegroundThemeBrush}" RequestedTheme="Default" Visibility="Visible" Margin="0,0,0,0" IsPaneOpen="True" VerticalAlignment="Stretch" Header="Velkommen">
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Name="LagerstatusItem" Content="Lagerstatus" Tapped="ToLagerstatus" />
