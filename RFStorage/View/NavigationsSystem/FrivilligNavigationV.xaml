@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView x:Name="MenuBar" HorizontalAlignment="Left" VerticalAlignment="Stretch" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True">
+        <NavigationView x:Name="MenuBar" HorizontalAlignment="Left" VerticalAlignment="Stretch" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True" Header="Velkommen">
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Name="LagerstatusItem" Content="Lagerstatus" Tapped="ToLagerstatus"/>
                 <NavigationViewItem x:Name="UdleveringItem" Content="Udlevering" Tapped="ToUdlevering"/>

@@ -33,20 +33,21 @@ namespace RFStorage.View.NavigationsSystem
         private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(LagerstatusV));
+            MenuBar.Header = "Lagerstatus";
         }
 
         private void ToUdlevering(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(OrganisationListeUdleveringV));
+            MenuBar.Header = "Udlevering";
         }
 
         private void ToIndlevering(object sender, TappedRoutedEventArgs e)
         {
             Frame1.Navigate(typeof(OrganisationListeIndleveringV));
+            MenuBar.Header = "Tilbagelevering";
         }
-
-
-
+        
         private void ToLogin(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(LoginV));
