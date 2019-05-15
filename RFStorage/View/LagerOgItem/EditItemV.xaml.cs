@@ -26,5 +26,11 @@ namespace RFStorage.View.LagerOgItem
         {
             this.InitializeComponent();
         }
+
+
+        private void ListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+          
+        }
     }
 }
