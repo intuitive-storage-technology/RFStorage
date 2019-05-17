@@ -15,10 +15,11 @@
     <Grid>
 
         <!--List and selected-->
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="450" Margin="545,270,0,0" VerticalAlignment="Top" Width="550" 
-                  ItemsSource="{Binding LagerstatusSingleton.VareOC, 
-         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                  SelectedItem="{Binding SelectedVare, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" />
+        <ListView x:Name="LagerstatuslistView" HorizontalAlignment="Left" Height="450" Margin="545,270,0,0" VerticalAlignment="Top" Width="550" 
+                  ItemsSource="{Binding LagerstatusSingleton.VareOC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedVare, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" 
+                  />
+        <AutoSuggestBox x:Name="SuggestBox2" Height="100" Width="500" PlaceholderText="Search" TextChanged="SuggestBox_OnTextChanged" />
 
     </Grid>
 </Page>
