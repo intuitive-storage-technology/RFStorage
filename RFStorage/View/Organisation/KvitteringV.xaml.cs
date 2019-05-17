@@ -20,11 +20,16 @@ namespace RFStorage.View.Organisation
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OrganisationListeUdleveringV : Page
+    public sealed partial class KvitteringV : Page
     {
-        public OrganisationListeUdleveringV()
+        public KvitteringV()
         {
             this.InitializeComponent();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+         Model.Kvittering.kvittering();
         }
     }
 }

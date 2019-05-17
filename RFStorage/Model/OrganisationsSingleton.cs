@@ -45,6 +45,7 @@ namespace RFStorage.Model
 
         public void TestOrgan()
         {
+            OrganisationOC.Clear();
             ObservableCollection<Vare> Org1OC = new ObservableCollection<Vare>();
             ObservableCollection<Vare> Org2OC = new ObservableCollection<Vare>();
             ObservableCollection<Vare> Org3OC = new ObservableCollection<Vare>();
@@ -56,12 +57,12 @@ namespace RFStorage.Model
             Organisation Org3 = new Organisation(3, "Materiel", Org3OC);
             Organisation Org4 = new Organisation(4, "East", Org4OC);
             Organisation Org5 = new Organisation(5, "West", Org5OC);
-
-            Org1.UdleveretVareOC.Add(new Vare("TestOrg1", 1, "testOrg1", 10, "god"));
-            Org2.UdleveretVareOC.Add(new Vare("TestOrg2", 1, "testOrg2", 10, "god"));
-            Org3.UdleveretVareOC.Add(new Vare("TestOrg3", 1, "testOrg3", 10, "god"));
-            Org4.UdleveretVareOC.Add(new Vare("TestOrg4", 1, "testOrg4", 10, "god"));
-            Org5.UdleveretVareOC.Add(new Vare("TestOrg5", 1, "testOrg5", 10, "god"));
+            Org1.UdleveretVareOC.Add(new Vare("TestOrg1", 1, "Test1", 50));
+            Org2.UdleveretVareOC.Add(new Vare("TestOrg2", 1, "Test2", 50));
+            Org3.UdleveretVareOC.Add(new Vare("TestOrg3", 1, "Test3", 50));
+            Org4.UdleveretVareOC.Add(new Vare("TestOrg4", 1, "Test4", 50));
+            Org5.UdleveretVareOC.Add(new Vare("TestOrg5", 1, "Test5", 50));
+           
 
             OrganisationOC.Add(Org1);
             OrganisationOC.Add(Org2);

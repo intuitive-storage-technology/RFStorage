@@ -19,6 +19,7 @@ namespace RFStorage.Handler
 
         #region Properties
         public LagerstatusVM LagerstatusVM { get; set; }
+        public OrganisationVM OrganisationVM { get; set; }
         #endregion
 
         #region Construktor
@@ -26,6 +27,11 @@ namespace RFStorage.Handler
         public VareHandler(LagerstatusVM lagerstatusVm)
         {
             LagerstatusVM = lagerstatusVm;
+        }
+
+        public VareHandler(OrganisationVM organisationVm)
+        {
+            OrganisationVM = organisationVm;
         }
 
         #endregion

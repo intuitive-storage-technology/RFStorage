@@ -34,10 +34,10 @@ namespace RFStorage.ViewModel
 
         #endregion
 
-        public static int CheckLogin()
-        {
+        //public static int CheckLogin()
+        //{
 
-        }
+        //}
 
     }
 }
