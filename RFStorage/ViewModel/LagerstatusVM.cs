@@ -60,7 +60,7 @@ namespace RFStorage.ViewModel
                 OnPropertyChanged();
             }
         }
-
+        
         #endregion
 
         #region Constructor
