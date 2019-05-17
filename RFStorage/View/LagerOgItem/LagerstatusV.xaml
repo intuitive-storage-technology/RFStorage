@@ -20,9 +20,5 @@
          Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                   SelectedItem="{Binding SelectedVare, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" />
 
-        <!--CreateVare-->
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="645,725,0,0" VerticalAlignment="Top" Width="355" Command="{Binding CreateVareCommand, UpdateSourceTrigger=PropertyChanged}"/>
-
-
     </Grid>
 </Page>
