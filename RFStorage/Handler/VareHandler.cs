@@ -9,15 +9,13 @@ using RFStorage.ViewModel;
 
 namespace RFStorage.Handler
 {
-    class VareHandler
+    class VareHandler 
     {
+        #region Properties
         public string VareNavn { get; set; }
         public int VareID { get; set; }
         public string VareType { get; set; }
         public int VareAntal { get; set; }
-
-
-        #region Properties
         public LagerstatusVM LagerstatusVM { get; set; }
         public OrganisationVM OrganisationVM { get; set; }
         #endregion
@@ -36,8 +34,8 @@ namespace RFStorage.Handler
 
         #endregion
 
-        //methods
-
+        #region Methods
+        
         //Create
         public void CreateVare()
         {
@@ -51,18 +49,26 @@ namespace RFStorage.Handler
             LagerstatusVM.SelectedVare = vare;
         }
 
+        //DeleteVare
         public void DeleteVare()
         {
             if (LagerstatusVM.SelectedVare != null)
             {
                 LagerstatusVM.LagerstatusSingleton.VareOC.Remove(LagerstatusVM.SelectedVare);
+                
             }
         }
 
+        #endregion
+
+        #region Commands
+        
+        //CommandInvokedHandler
         private void CommandInvokedHandler(IUICommand command)
         {
             LagerstatusVM.LagerstatusSingleton.Remove(LagerstatusVM.SelectedVare);
         }
 
+        #endregion
     }
 }

@@ -53,18 +53,16 @@
             <TextBlock x:Name="VareNameTextBlock" Margin="20,10,10,10" Text="Vare Navn" TextWrapping="Wrap"/>
             <TextBox x:Name="VareNameButton" Margin="10,10,10,10" Text="{Binding VareHandler.VareNavn , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBlock x:Name="VareIDBlock" Margin="20,10,10,10" Text="Vare ID" TextWrapping="Wrap"/>
-            <TextBox x:Name="VareIDButton" Margin="10,10,10,10" Text="{Binding VareHandler.VareID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-
             <TextBlock x:Name="VareTypeBlock" Margin="20,10,10,10" Text="Vare Type" TextWrapping="Wrap"/>
             <TextBox x:Name="VareTypeButton" Margin="10,10,10,10" Text="{Binding VareHandler.VareType , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock x:Name="VareAntalBlock" Margin="20,10,10,10" Text="Vare Antal" TextWrapping="Wrap"/>
             <TextBox x:Name="VareAntalButton" Margin="10,10,10,10" Text="{Binding VareHandler.VareAntal , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Button x:Name="TilføjTilLagerButton" Command="{Binding CreateVareCommand}" Content="Tilføj TilLager" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch"/>
+            <Button x:Name="TilføjTilLagerButton" Command="{Binding CreateVareCommand}" Content="Tilføj Til Lager" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch"/>
 
-            <Button x:Name="DeleteVarebutton" Content="Button" Margin="320,0,0,199" VerticalAlignment="Bottom" Height="76" Width="260" Command="{Binding DeleteVareCommand, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock x:Name="VareIDBlock" Margin="20,10,10,10" Text="Vare ID" TextWrapping="Wrap" Visibility="Collapsed"/>
+            <TextBox x:Name="VareIDButton" Margin="10,10,10,10" Text="{Binding VareHandler.VareID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="Collapsed" />
         </StackPanel>
 
     </Grid>

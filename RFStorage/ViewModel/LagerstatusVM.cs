@@ -45,9 +45,22 @@ namespace RFStorage.ViewModel
 
         public LagerstatusSingleton LagerstatusSingleton { get; set; }
         public Handler.VareHandler VareHandler { get; set; }
-        public static Vare SelectedVare { get; set; }
+        private static Vare _selectedVare;
 
 
+        public Vare SelectedVare
+        {
+            get
+            {
+                return _selectedVare;
+            }
+            set
+            {
+                _selectedVare = value;
+                OnPropertyChanged();
+            }
+        }
+        
         #endregion
 
         #region Constructor
@@ -94,6 +107,7 @@ namespace RFStorage.ViewModel
             {
                 return _selectedVareCommand ?? (_selectedVareCommand =
                            new RelayArgsCommands<Vare>(Vare => VareHandler.SetSelectedVare(Vare)));
+                OnPropertyChanged();
             }
             set { _selectedVareCommand = value; }
         }
