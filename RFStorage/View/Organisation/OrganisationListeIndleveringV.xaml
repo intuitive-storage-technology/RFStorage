@@ -8,5 +8,73 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid />
+    <Grid
+        Width="auto"
+        Height="auto"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
+        <RelativePanel Width="auto" Height="auto">
+            <RelativePanel Margin="200,200,0,0">
+                <AutoSuggestBox
+                    x:Name="SuggestBox"
+                    Width="120"
+                    Margin="0,-60,0,0"
+                    PlaceholderText="Search"
+                    TextChanged="SuggestBox_OnTextChanged" />
+                <ListView
+                    x:Name="OrganList"
+                    Width="auto"
+                    Height="auto"
+                    ItemsSource="{Binding OrganisationsSingleton.OrganisationOC}"
+                    SelectedItem="{Binding SelectedOrganisation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <RelativePanel>
+                                <TextBlock Text="{Binding OrganisationID}" Margin="0,18,0,0" />
+                                <TextBlock Margin="0,0,0,0" Text="{Binding OrganisationNavn}" />
+
+                            </RelativePanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button
+                    Width="auto"
+                    Height="auto"
+                    Margin="200,220,0,0"
+                    Click="ButtonBase_OnClick"
+                    Content="Choose" />
+            </RelativePanel>
+            <RelativePanel Width="auto" Height="auto">
+                <RelativePanel Width="auto" Height="Auto">
+                    <ListView
+                        x:Name="CartTilbageView"
+                        Width="Auto"
+                        Height="auto"
+                        ItemsSource="{Binding SortOC}"
+                        SelectedItem="{Binding SelectedVare,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                        Margin="800,200,0,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <RelativePanel>
+                                    <TextBlock  x:Name ="NavneBlock"  Text="{Binding VareNavn, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBlock x:Name="IDBlock"  Text="{Binding VareID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,18,0,0"/>
+                                    <TextBlock x:Name="TypeBlock" Text="{Binding VareType, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,36,0,0"/>
+                                    <TextBox x:Name="SliderBox" Text="{Binding VareAntal, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,54,0,0"></TextBox>
+
+                                </RelativePanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button Content="Add to cart" Width="auto" Height="Auto" Margin="840,420,0,0" Click="ButtonBaseClick" >
+
+                    </Button>
+
+
+                </RelativePanel>
+
+            </RelativePanel>
+            <Button Width="auto" Height="Auto" Content="Udlever" Margin="940,420,0,0" Click="ButtonBase_OnClickTilbagelever"></Button>
+        </RelativePanel>
+
+    </Grid>
 </Page>
