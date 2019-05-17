@@ -16,6 +16,9 @@
 
 
     <Grid>
+
+        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
             <RowDefinition Height="1*" />
@@ -27,22 +30,26 @@
 
 
         <!--List and selected-->
-        <StackPanel 
+        <StackPanel
             Name = "LagerGrid"
             Grid.Row="0"
-            Grid.Column="0"
-        >
+            Grid.Column="0">
+            
 
             <ListView x:Name="listView" HorizontalAlignment="Stretch" Margin="545,270,0,0" VerticalAlignment="Stretch" 
                       ItemsSource="{Binding LagerstatusSingleton.VareOC, 
-                  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                      Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" 
                       SelectedItem="{Binding SelectedVare, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" 
                       SelectionChanged="ListView_OnSelectionChanged"/>
+                      
+            
 
         </StackPanel>
 
-        <StackPanel
+        <StackPanel Visibility="Collapsed"
+            
             Name ="CreateItemGrid"
+
             Grid.Row="0"
             Grid.Column="1">
 
@@ -63,12 +70,28 @@
         </StackPanel>
 
 
-        <Button x:Name="List" Content="Edit" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="92" Grid.Column="1"/>
+        <!--Edit-->
+        <Button x:Name="Edit" Visibility="Visible" Content="Edit" HorizontalAlignment="Left"
+                Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="92" Grid.Column="1"
+                Click="EditClick" Command="{Binding UpdateSourceTrigger=PropertyChanged}" />
+                
+        
+
+
+        <!--Update-->
+        <Button x:Name="Update" Visibility="Collapsed" Content="Update" HorizontalAlignment="Center"
+                Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="92" Grid.Column="1"
+                Click="Update_Click_1" Command="{Binding UpdateSourceTrigger=PropertyChanged}"/>
+
+
 
         <!--Delete Vare-->
-        <Button x:Name="DeleteVarebutton" Content="Delete" Margin="356,0,0,0" Command="{Binding DeleteVareCommand, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="DeleteVarebutton" Content="Delete" Margin="356,0,0,0" 
+                Command="{Binding DeleteVareCommand, UpdateSourceTrigger=PropertyChanged}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
 
 
 
     </Grid>
+
 </Page>

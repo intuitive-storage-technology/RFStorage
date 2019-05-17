@@ -34,10 +34,7 @@ namespace RFStorage.ViewModel
 
         #endregion
 
-        public static int CheckLogin()
-        {
 
-        }
 
     }
 }
