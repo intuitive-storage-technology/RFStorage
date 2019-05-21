@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using RFStorage.View.LagerOgItem;
 using RFStorage.View.Login;
 using RFStorage.View.Organisation;
+using RFStorage.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,9 +26,12 @@ namespace RFStorage.View.NavigationsSystem
     /// </summary>
     public sealed partial class FrivilligNavigationV : Page
     {
+        private LogInVM LoginVM { get; }
+
         public FrivilligNavigationV()
         {
             this.InitializeComponent();
+            LoginVM = new LogInVM();
         }
 
         private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
@@ -50,6 +54,7 @@ namespace RFStorage.View.NavigationsSystem
         
         private void ToLogin(object sender, TappedRoutedEventArgs e)
         {
+            LoginVM.LogOut();
             this.Frame.Navigate(typeof(LoginV));
         }
     }
