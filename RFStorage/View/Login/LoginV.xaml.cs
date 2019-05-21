@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using RFStorage.Handler;
 using RFStorage.View.NavigationsSystem;
 using RFStorage.ViewModel;
 
