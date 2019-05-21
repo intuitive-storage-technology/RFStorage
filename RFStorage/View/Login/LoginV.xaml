@@ -11,7 +11,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
-        <ViewModel:CreateRemoveBrugerVM/>
+        <ViewModel:LogInVM/>
     </Page.DataContext>
 
     <Grid>
@@ -24,21 +24,24 @@
             <StackPanel.Background>
                 <SolidColorBrush Color="White" Opacity="0.4"/>
             </StackPanel.Background>
-            <Image x:Name="TeamMLogo" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="Auto" Source="ms-appx:///Assets/Team Materiel 4.png" MinWidth="0" MinHeight="0" Margin="0,0,0,30">
+            <Image x:Name="TeamMLogo" HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Source="ms-appx:///Assets/Team Materiel 4.png" MinWidth="0" MinHeight="0" Margin="0,0,0,30" MaxHeight="150" MaxWidth="150">
                 <Image.FocusVisualPrimaryBrush>
                     <ImageBrush Stretch="Fill"/>
                 </Image.FocusVisualPrimaryBrush>
             </Image>
 
             <TextBlock x:Name="Username" TextWrapping="Wrap" Text="Username:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10" Foreground="Black"/>
-            <TextBox x:Name="Username_Input" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="White" BorderBrush="#99000000"/>
+            <TextBox x:Name="Username_Input" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="White" BorderBrush="#99020202" Foreground="Black" AcceptsReturn="True" PlaceholderText="" Text="{Binding BrugerIDInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionHighlightColor="White" FocusVisualSecondaryBrush="#99080808" FocusVisualPrimaryBrush="White" PlaceholderForeground="#FF080808" SelectionHighlightColorWhenNotFocused="{x:Null}"/>
             <TextBlock x:Name="Password" TextWrapping="Wrap" Text="Password:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10" Foreground="Black"/>
-            <PasswordBox x:Name="Password_Input" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" Margin="0,0,0,30" Background="White" BorderBrush="#99000000"/>
+            <PasswordBox x:Name="Password_Input" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" Margin="0,0,0,0" Background="White" BorderBrush="#99000000" Password="{Binding PasswordInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="" SelectionHighlightColor="White" InputScope="Password" Foreground="Black" FocusVisualPrimaryBrush="White" FocusVisualSecondaryBrush="#99080808" />
+            <TextBlock x:Name="statusText" Margin="0,0,0,32" />
             <StackPanel x:Name="StackPanelButtons" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,20,0" MinHeight="32" MinWidth="64" Background="#CCFFFFFF" Foreground="Black"/>
-                <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="64" Background="#CCFB7200" Foreground="Black" Click="ToNavigation"/>
+                <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,20,0" MinHeight="32" MinWidth="64" Background="#CCFFFFFF" Foreground="Black" Click="ClearInputs"/>
+                <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="64" Background="#CCFB7200" Foreground="Black" Click="SetSelectedBrugerCommand" />
             </StackPanel>
         </StackPanel>
-
+        <Grid VerticalAlignment="Top" MinHeight="32" MaxHeight="32" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+            <TextBlock x:Name="AppTitle" HorizontalAlignment="Left" Text="RFStorage" MinHeight="32" MaxHeight="32" Style="{StaticResource CaptionTextBlockStyle}" Margin="12,8,12,8"/>
+        </Grid>
     </Grid>
 </Page>

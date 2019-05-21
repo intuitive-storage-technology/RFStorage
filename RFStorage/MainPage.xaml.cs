@@ -13,9 +13,11 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Xaml.Interactions.Core;
+using RFStorage.View;
 using RFStorage.View.LagerOgItem;
 using RFStorage.View.Login;
 using RFStorage.View.Organisation;
+using RFStorage.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,10 +28,12 @@ namespace RFStorage
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private LogInVM LoginVM { get; }
         public MainPage()
         {
             this.InitializeComponent();
             Frame1.Navigate(typeof(LagerstatusV));
+            LoginVM = new LogInVM();
         }      
 
         private void ToLagerstatus(object sender, TappedRoutedEventArgs e)
@@ -70,6 +74,7 @@ namespace RFStorage
 
         private void ToLogin(object sender, TappedRoutedEventArgs e)
         {
+            LoginVM.LogOut();
             this.Frame.Navigate(typeof(LoginV));
         }
     }

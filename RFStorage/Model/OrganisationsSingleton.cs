@@ -64,8 +64,6 @@ namespace RFStorage.Model
             Org4.UdleveretVareOC.Add(new Vare("TestOrg4", 1, "Test4", 50));
             Org5.UdleveretVareOC.Add(new Vare("TestOrg5", 1, "Test5", 50));
            
-
-
             OrganisationOC.Add(Org1);
             OrganisationOC.Add(Org2);
             OrganisationOC.Add(Org3);
