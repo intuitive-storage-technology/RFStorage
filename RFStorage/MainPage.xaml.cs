@@ -44,7 +44,7 @@ namespace RFStorage
 
         private void ToUdlevering(object sender, TappedRoutedEventArgs e)
         {
-            Frame1.Navigate(typeof(OrganisationListeUdleveringV));
+            Frame1.Navigate(typeof(OrganisationSøgUdlevering));
             MenuBar.Header = "Udlevering";
         }
 

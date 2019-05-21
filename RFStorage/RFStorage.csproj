@@ -163,17 +163,14 @@
     <Compile Include="View\NavigationsSystem\FrivilligNavigationV.xaml.cs">
       <DependentUpon>FrivilligNavigationV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Organisation\KvitteringV.xaml.cs">
+      <DependentUpon>KvitteringV.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Organisation\OrganisationListeIndleveringV.xaml.cs">
       <DependentUpon>OrganisationListeIndleveringV.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Organisation\OrganisationListeUdleveringV.xaml.cs">
-      <DependentUpon>OrganisationListeUdleveringV.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Organisation\OrganisationSøgUdlevering.xaml.cs">
       <DependentUpon>OrganisationSøgUdlevering.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Organisation\UdleveringsSide.xaml.cs">
-      <DependentUpon>UdleveringsSide.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -229,19 +226,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Organisation\KvitteringV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Organisation\OrganisationListeIndleveringV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Organisation\OrganisationListeUdleveringV.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Organisation\OrganisationSøgUdlevering.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Organisation\UdleveringsSide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,6 +248,9 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Pdf.UWP">
+      <Version>17.1.0.47</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
