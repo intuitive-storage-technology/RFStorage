@@ -28,7 +28,7 @@ namespace RFStorage.Model
 
         #region Constructor
         /// <summary>
-        /// 
+        /// SKRIV NOGET HER
         /// </summary>
         /// <param name="organisationId"></param>
         /// <param name="organisationNavn"></param>
