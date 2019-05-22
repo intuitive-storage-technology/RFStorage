@@ -164,6 +164,9 @@
     <Compile Include="View\NavigationsSystem\FrivilligNavigationV.xaml.cs">
       <DependentUpon>FrivilligNavigationV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Organisation\KvitteringTilbageLeveringV.xaml.cs">
+      <DependentUpon>KvitteringTilbageLeveringV.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Organisation\KvitteringV.xaml.cs">
       <DependentUpon>KvitteringV.xaml</DependentUpon>
     </Compile>
@@ -224,6 +227,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NavigationsSystem\FrivilligNavigationV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Organisation\KvitteringTilbageLeveringV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
