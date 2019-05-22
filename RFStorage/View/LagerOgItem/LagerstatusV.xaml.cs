@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using RFStorage.Converter;
 using RFStorage.RelayCommands;
 using RFStorage.ViewModel;
 
@@ -29,6 +30,17 @@ namespace RFStorage.View.LagerOgItem
         {
             this.InitializeComponent();
         }
-        
+
+        private void SuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                var filtered1 = Model.LagerstatusSingleton.Instance.VareOC.Where(i =>
+                    i.VareNavn.CaseInsensitiveContains(this.SuggestBox2.Text));
+                LagerstatuslistView.ItemsSource = filtered1;
+            }
+
+        }
+
     }
 }

@@ -9,8 +9,13 @@
     xmlns:login="using:RFStorage.View.Login"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:serviceModel="using:System.ServiceModel"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    mc:Ignorable="d">
+    xmlns:viewModel="using:RFStorage.ViewModel"
+    mc:Ignorable="d" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Default">
+    <Page.DataContext>
+        <viewModel:LogInVM/>
+    </Page.DataContext>
+
     <Page.Resources>
         <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="XamlAutoFontFamily" />
@@ -411,73 +416,38 @@
             </Setter>
         </Style>
     </Page.Resources>
-    <Grid
-        Margin="0,0,0,0"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch">
-        <Frame
-            x:Name="Frame1"
-            Margin="0,48,0,0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            Content="">
+    <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+        <Frame x:Name="Frame1" Content="" Margin="0,72,0,0">
             <Frame.ContentTransitions>
                 <TransitionCollection>
                     <NavigationThemeTransition />
                 </TransitionCollection>
             </Frame.ContentTransitions>
         </Frame>
-        <NavigationView
-            x:Name="MenuBar"
-            Margin="0,0,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Stretch"
-            AllowDrop="True"
-            FocusVisualPrimaryBrush="{ThemeResource SystemControlFocusVisualPrimaryBrush}"
-            FocusVisualSecondaryBrush="{ThemeResource AppBarToggleButtonCheckedDisabledForegroundThemeBrush}"
-            Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"
-            Header="Velkommen"
-            IsBackButtonVisible="Collapsed"
-            IsPaneOpen="True"
-            IsPaneToggleButtonVisible="True"
-            IsSettingsVisible="False"
-            RequestedTheme="Default"
-            Style="{StaticResource NavigationViewStyle1}"
-            Visibility="Visible">
+        <NavigationView Style="{StaticResource NavigationViewStyle1}" x:Name="MenuBar" HorizontalAlignment="Left" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" FocusVisualPrimaryBrush="{ThemeResource SystemControlFocusVisualPrimaryBrush}" FocusVisualSecondaryBrush="{ThemeResource AppBarToggleButtonCheckedDisabledForegroundThemeBrush}" RequestedTheme="Default" Visibility="Visible" Margin="0,32,0,0" IsPaneOpen="True" VerticalAlignment="Stretch" Header="Velkommen">
             <NavigationView.MenuItems>
-                <NavigationViewItem
-                    x:Name="LagerstatusItem"
-                    Content="Lagerstatus"
-                    Tapped="ToLagerstatus" />
-                <NavigationViewItem
-                    x:Name="UdleveringItem"
-                    Content="Udlevering"
-                    Tapped="ToUdlevering" />
-                <NavigationViewItem
-                    x:Name="TilbageleveringItem"
-                    Content="Tilbagelevering"
-                    Tapped="ToIndlevering" />
-                <NavigationViewItemSeparator x:Name="AdminSection" />
-                <NavigationViewItem
-                    x:Name="CreateVareItem"
-                    Content="Opret vare"
-                    Tapped="ToCreateVare" />
-                <NavigationViewItem
-                    x:Name="EditVareItem"
-                    Content="Redigér vare"
-                    Tapped="ToEditVare" />
-                <NavigationViewItem
-                    x:Name="CreateRemoveBrugerItem"
-                    Content="Opret/Slet bruger"
-                    Tapped="ToCreateRemoveBruger" />
-                <NavigationViewItemSeparator />
-                <NavigationViewItem x:Name="SettingsItem" Content="Indstillinger" />
+                <NavigationViewItem x:Name="LagerstatusItem" Content="Lagerstatus" Tapped="ToLagerstatus" />
+                <NavigationViewItem x:Name="UdleveringItem" Content="Udlevering" Tapped="ToUdlevering"/>
+                <NavigationViewItem x:Name="TilbageleveringItem" Content="Tilbagelevering" Tapped="ToIndlevering"/>
+                <NavigationViewItemSeparator x:Name="AdminSection"/>
+                <NavigationViewItem x:Name="CreateVareItem" Content="Opret vare" Tapped="ToCreateVare"/>
+                <NavigationViewItem x:Name="EditVareItem" Content="Redigér vare" Tapped="ToEditVare"/>
+                <NavigationViewItem x:Name="CreateRemoveBrugerItem" Content="Opret/Slet bruger" Tapped="ToCreateRemoveBruger"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem x:Name="SettingsItem" Content="Indstillinger"/>
                 <NavigationViewItem x:Name="AboutItem" Content="Om" />
-                <NavigationViewItem
-                    x:Name="LogoutItem"
-                    Content="Log ud"
-                    Tapped="ToLogin" />
+                <NavigationViewItem x:Name="LogoutItem" Content="Log ud" Tapped="ToLogin"/>
             </NavigationView.MenuItems>
         </NavigationView>
+        <Grid VerticalAlignment="Top" MinHeight="32" MaxHeight="32" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="AppTitle" HorizontalAlignment="Left" Text="RFStorage" MinHeight="32" MaxHeight="32" Style="{StaticResource CaptionTextBlockStyle}" Margin="6,8,12,8"/>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Stretch" Margin="68,0,150,0" VerticalAlignment="Stretch" FlowDirection="RightToLeft" Orientation="Horizontal">
+                <TextBlock x:Name="CurrentUser" Text="{Binding SelectedBruger.Brugernavn}" HorizontalAlignment="Stretch" Margin="12,8,0,8" VerticalAlignment="Stretch" Style="{StaticResource CaptionTextBlockStyle}" Foreground="#FFEF7300"/>
+                <TextBlock x:Name="LoggedAsText" Text="You are logged in as:" Margin="6,8,12,8" HorizontalAlignment="Right" Style="{StaticResource CaptionTextBlockStyle}"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

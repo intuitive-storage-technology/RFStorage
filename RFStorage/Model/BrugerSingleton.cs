@@ -38,6 +38,11 @@ namespace RFStorage.Model
         private BrugerSingleton()
         {
             BrugerOC = new ObservableCollection<Bruger>();
+            BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
+            BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", true));
+            BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
+            BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
+            BrugerOC.Add(new Bruger("Test7213", "Random Pleb", "passwordtest", false));
         }
         #endregion
 

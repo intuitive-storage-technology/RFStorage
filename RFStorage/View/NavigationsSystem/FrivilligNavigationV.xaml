@@ -5,11 +5,14 @@
     xmlns:local="using:RFStorage.View.NavigationsSystem"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:RFStorage.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.DataContext>
+        <viewModel:LogInVM/>
+    </Page.DataContext>
     <Grid>
-        <NavigationView x:Name="MenuBar" HorizontalAlignment="Left" VerticalAlignment="Stretch" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True" Header="Velkommen">
+        <NavigationView x:Name="MenuBar" HorizontalAlignment="Left" VerticalAlignment="Stretch" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" AllowDrop="True" Header="Velkommen" Margin="0,32,0,0">
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Name="LagerstatusItem" Content="Lagerstatus" Tapped="ToLagerstatus"/>
                 <NavigationViewItem x:Name="UdleveringItem" Content="Udlevering" Tapped="ToUdlevering"/>
@@ -20,7 +23,13 @@
                 <NavigationViewItem x:Name="LogoutItem" Content="Log ud" Tapped="ToLogin"/>
             </NavigationView.MenuItems>
         </NavigationView>
-        <Frame x:Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch"/>
-
+        <Frame x:Name="Frame1" Content="" HorizontalAlignment="Stretch" Margin="0,32,0,0" VerticalAlignment="Stretch"/>
+        <Grid VerticalAlignment="Top" MinHeight="32" MaxHeight="32" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+            <TextBlock x:Name="AppTitle" HorizontalAlignment="Left" Text="RFStorage" MinHeight="32" MaxHeight="32" Style="{StaticResource CaptionTextBlockStyle}" Margin="12,8,12,8"/>
+            <StackPanel HorizontalAlignment="Stretch" Margin="68,0,150,0" VerticalAlignment="Stretch" FlowDirection="RightToLeft" Orientation="Horizontal">
+                <TextBlock x:Name="CurrentUser" Text="{Binding SelectedBruger.Brugernavn}" HorizontalAlignment="Stretch" Margin="6,8,0,8" VerticalAlignment="Stretch" Style="{StaticResource CaptionTextBlockStyle}" Foreground="#FFEF7300"/>
+                <TextBlock x:Name="LoggedAsText" Text="You are logged in as:" Margin="6,8,6,8" HorizontalAlignment="Right" Style="{StaticResource CaptionTextBlockStyle}" Padding="0,0,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

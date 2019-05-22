@@ -51,6 +51,7 @@ namespace RFStorage.Model
             ObservableCollection<Vare> Org3OC = new ObservableCollection<Vare>();
             ObservableCollection<Vare> Org4OC = new ObservableCollection<Vare>();
             ObservableCollection<Vare> Org5OC = new ObservableCollection<Vare>();
+
             ObservableCollection<Vare> OrgTilbageOC1 = new ObservableCollection<Vare>();
             ObservableCollection<Vare> OrgTilbageOC2 = new ObservableCollection<Vare>();
             ObservableCollection<Vare> OrgTilbageOC3 = new ObservableCollection<Vare>();
@@ -67,8 +68,8 @@ namespace RFStorage.Model
             Org3.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test3", 50));
             Org4.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test4", 50));
             Org5.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test5", 50));
-           
 
+           
             OrganisationOC.Add(Org1);
             OrganisationOC.Add(Org2);
             OrganisationOC.Add(Org3);
