@@ -5,8 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:RFStorage.View.Organisation"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:RFStorage.ViewModel"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModel:OrganisationVM />
+    </Page.DataContext>
 
     <Grid
         Width="auto"
@@ -73,7 +77,7 @@
                 </RelativePanel>
 
             </RelativePanel>
-            <Button Width="auto" Height="Auto" Content="Udlever" Margin="940,420,0,0" Click="ButtonBase_OnClickTilbagelever"></Button>
+            <Button Width="auto" Height="Auto" Content="Tilbagelever" Margin="940,420,0,0" Click="ButtonBase_OnClickTilbagelever"></Button>
         </RelativePanel>
 
     </Grid>

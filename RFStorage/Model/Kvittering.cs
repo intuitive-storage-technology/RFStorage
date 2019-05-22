@@ -26,8 +26,154 @@ namespace RFStorage.Model
         /// Til sidst initialisere den en memorystream og kalder save metoden der hjælper med at gemme kvitteringen og vise den.
         /// Metoden har en using, da den del er disposable.
         /// </summary>
+        public static void KvitteringTilbage()
+        {
+            using (PdfDocument pdfdoc = new PdfDocument())
 
-        public static void kvittering()
+            {
+                // Genererer sammen med using-sætningen selve pdfen.
+
+                #region Page/graphics generation
+
+                PdfPage page = pdfdoc.Pages.Add();
+                PdfGraphics graphics = page.Graphics;
+
+                #endregion
+
+                // Definerer font og udseende af bodyen
+                // Indeholder en bevægelighed for at kunne gøre den betinget af variabler.
+
+                #region Body 
+
+                //TODO - Variable defineret body
+
+                var count = 0;
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+                foreach (var e in OrganisationVM.TilbageLeveringsOC)
+                {
+
+                    graphics.DrawString($"{e.VareNavn}", font, PdfBrushes.Black, 200, 400 + count);
+                    graphics.DrawString($"{e.VareAntal}", font, PdfBrushes.Black, 300, 400 + count);
+                    count = count + 50;
+                }
+
+                #endregion
+
+                // Laver en adskillese imellem Header og Body - PdfPen bruges til dette. Det er markant mere effektivt end at skrive strings af linjer.
+
+                #region Body/Header Adskillese
+
+                PdfPen pen = new PdfPen(PdfBrushes.Black);
+                PdfFont BodyHeaderFont = new PdfStandardFont(PdfFontFamily.Helvetica, 8);
+                graphics.DrawLine(pen, 0, 130, 595, 130);
+                graphics.DrawLine(pen, 0, 140, 595, 140);
+                graphics.DrawString("info                info                 info                  info",
+                    BodyHeaderFont, PdfBrushes.Black, 150, 130);
+
+                #endregion
+
+                // Definerer header udseende - denne er delt op i forskellige dele for at gøre selve designfasen nemmere og mere flexibel.
+
+                #region Header
+
+                //Definerer left header - indeholder bare font og drawstring.
+
+                #region Left Header
+
+                string LeftHeaderText = "Roskilde Festival";
+                string LeftHeaderText2 = "Vor Frue Hovedgade 8";
+                string LeftHeaderText3 = "Kontaktperson - Filip Dan Hansen";
+                string LeftHeaderText4 = "Telefon - 99 99 99 99";
+                PdfFont LeftHeaderFont = new PdfStandardFont(PdfFontFamily.Helvetica, 8);
+                graphics.DrawString(LeftHeaderText, LeftHeaderFont, PdfBrushes.Black, 0, 0);
+                graphics.DrawString(LeftHeaderText2, LeftHeaderFont, PdfBrushes.Black, 0, 15);
+                graphics.DrawString(LeftHeaderText3, LeftHeaderFont, PdfBrushes.Black, 0, 30);
+                graphics.DrawString(LeftHeaderText4, LeftHeaderFont, PdfBrushes.Black, 0, 45);
+
+                #endregion
+
+                // Denne del af headeren indeholder et billede. Her bruges GetManiFestResourceStream for at hente et billede. Billedet SKAL! være embedded resource
+                // da vi ellers ikke kan få adgang til det i UWP. 
+
+                #region Right Header
+
+                Stream imageStream = typeof(Kvittering).GetTypeInfo().Assembly
+                    .GetManifestResourceStream("RFStorage.Assets.roskilde-festival-logo.png");
+                PdfBitmap bmp = new PdfBitmap(imageStream);
+                graphics.DrawImage(bmp, 420, 0, 60, 60);
+
+                #endregion
+
+                // Mid header - indeholder fonts og drawstrings.
+
+                #region Mid Header
+
+                string MidHeaderText = "Tilbagelevering - Dummy";
+                string MidHeaderText2 = "Tilbageleveringstidspunkt: 19-03-2019 22:22:14";
+                PdfFont MiddleHeaderFont2 = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+                PdfFont MiddleHeaderFont3 = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
+                graphics.DrawString(MidHeaderText, MiddleHeaderFont2, PdfBrushes.Black, 150, 60);
+                graphics.DrawString(MidHeaderText2, MiddleHeaderFont3, PdfBrushes.Black, 100, 90);
+
+                #endregion
+
+                #endregion
+
+                // Definerer footer delen af PDF'en - Her bruges Font, Drawstring og Pen - Ingen yderligere forklaring nødvendig
+
+                #region Footer
+
+                PdfFont FooterFont1 = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
+                PdfFont FooterFont2 = new PdfStandardFont(PdfFontFamily.Helvetica, 8);
+
+                #region Right Footer
+
+                string RightFooterText = "Lejer";
+                string RightFooterText2 = "___________________";
+                string RightFooterText3 = "Underskrift";
+                graphics.DrawString(RightFooterText, FooterFont1, PdfBrushes.Black, 30, 700);
+                graphics.DrawString(RightFooterText2, FooterFont1, PdfBrushes.Black, 30, 740);
+                graphics.DrawString(RightFooterText3, FooterFont2, PdfBrushes.Black, 30, 750);
+
+                #endregion
+
+                #region Left Footer
+
+                string LeftFooterText = "Udlejer - Team Materiel";
+                string LeftFooterText2 = "___________________";
+                string LeftFooterText3 = "Underskrift";
+                graphics.DrawString(LeftFooterText, FooterFont1, PdfBrushes.Black, 380, 700);
+                graphics.DrawString(LeftFooterText2, FooterFont1, PdfBrushes.Black, 380, 740);
+                graphics.DrawString(LeftFooterText3, FooterFont2, PdfBrushes.Black, 380, 750);
+
+                #endregion
+
+                #region MidFooter
+
+                PdfPen FooterPen = new PdfPen(PdfBrushes.Black);
+                graphics.DrawLine(FooterPen, 0, 670, 595, 670);
+
+                #endregion
+
+
+                #endregion
+
+                // I denne Region laves startes hele processen - En memory stream bliver initialiseret og pdfdoc bliver gemt deri, derudover kaldes 
+                // hjælpe Save metoden
+
+                #region Save/Process
+
+                MemoryStream ms = new MemoryStream();
+                pdfdoc.Save(ms);
+                // Definerer den stream der bruges til save metoden - og det filnavn der skal bruges som Suggested File Name => Save(Stream navn, Suggested File Name)
+                Save(ms, "Sample.pdf");
+
+                #endregion
+
+            }
+
+        }
+        public static void KvitteringUd()
         {
 
 
@@ -111,8 +257,8 @@ namespace RFStorage.Model
 
                 #region Mid Header
 
-                string MidHeaderText = "Tilbagelevering - Dummy";
-                string MidHeaderText2 = "Tilbageleveringstidspunkt: 19-03-2019 22:22:14";
+                string MidHeaderText = "Udlevering - Dummy";
+                string MidHeaderText2 = "Udleveringstidspunkt: 19-03-2019 22:22:14";
                 PdfFont MiddleHeaderFont2 = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
                 PdfFont MiddleHeaderFont3 = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
                 graphics.DrawString(MidHeaderText, MiddleHeaderFont2, PdfBrushes.Black, 150, 60);

@@ -52,17 +52,23 @@ namespace RFStorage.Model
             ObservableCollection<Vare> Org4OC = new ObservableCollection<Vare>();
             ObservableCollection<Vare> Org5OC = new ObservableCollection<Vare>();
 
-            Organisation Org1 = new Organisation(1, "Orange Scene", Org1OC);
-            Organisation Org2 = new Organisation(2, "Apollo", Org2OC);
-            Organisation Org3 = new Organisation(3, "Materiel", Org3OC);
-            Organisation Org4 = new Organisation(4, "East", Org4OC);
-            Organisation Org5 = new Organisation(5, "West", Org5OC);
+            ObservableCollection<Vare> OrgTilbageOC1 = new ObservableCollection<Vare>();
+            ObservableCollection<Vare> OrgTilbageOC2 = new ObservableCollection<Vare>();
+            ObservableCollection<Vare> OrgTilbageOC3 = new ObservableCollection<Vare>();
+            ObservableCollection<Vare> OrgTilbageOC4 = new ObservableCollection<Vare>();
+            ObservableCollection<Vare> OrgTilbageOC5 = new ObservableCollection<Vare>();
 
-            Org1.UdleveretVareOC.Add(new Vare("TestOrg1", 1, "Test1", 50));
-            Org2.UdleveretVareOC.Add(new Vare("TestOrg2", 1, "Test2", 50));
-            Org3.UdleveretVareOC.Add(new Vare("TestOrg3", 1, "Test3", 50));
-            Org4.UdleveretVareOC.Add(new Vare("TestOrg4", 1, "Test4", 50));
-            Org5.UdleveretVareOC.Add(new Vare("TestOrg5", 1, "Test5", 50));
+            Organisation Org1 = new Organisation(1, "Orange Scene", Org1OC, OrgTilbageOC1);
+            Organisation Org2 = new Organisation(2, "Apollo", Org2OC, OrgTilbageOC2);
+            Organisation Org3 = new Organisation(3, "Materiel", Org3OC, OrgTilbageOC3);
+            Organisation Org4 = new Organisation(4, "East", Org4OC, OrgTilbageOC4);
+            Organisation Org5 = new Organisation(5, "West", Org5OC, OrgTilbageOC5);
+            Org1.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test1", 50));
+            Org2.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test2", 50));
+            Org3.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test3", 50));
+            Org4.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test4", 50));
+            Org5.UdleveretVareOC.Add(new Vare("Køleskab", 1, "Test5", 50));
+
            
             OrganisationOC.Add(Org1);
             OrganisationOC.Add(Org2);

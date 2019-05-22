@@ -18,6 +18,7 @@ namespace RFStorage.ViewModel
 {
     class OrganisationVM : INotifyPropertyChanged
     {
+        #region Properties
         #region Instance Field
         private ICommand _selectOrganisationCommand;
         private ICommand _selectedVareCommand;
@@ -60,10 +61,15 @@ namespace RFStorage.ViewModel
             set => _selectOrganisationCommand = value;
         }
         #endregion
+        #endregion
+
 
 
 
         #region Constructor
+        /// <summary>
+        /// 
+        /// </summary>
         public OrganisationVM()
         {
             OrganisationsSingleton = OrganisationsSingleton.Instance;
@@ -76,6 +82,9 @@ namespace RFStorage.ViewModel
         }
         #endregion
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
         public static void ListeSortering()
         {
             SortOC.Clear();
@@ -89,12 +98,15 @@ namespace RFStorage.ViewModel
 
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public async void UdleveringsSortering()
         {
             if (SelectedVare != null)
             {
-                 UdleveringsOC.Add(new Vare(SelectedVare.VareNavn,SelectedVare.VareID,SelectedVare.VareType,SelectedVare.VareAntal));
+                
+                UdleveringsOC.Add(new Vare(SelectedVare.VareNavn,SelectedVare.VareID,SelectedVare.VareType,SelectedVare.VareAntal));
                 var messageDialog = new MessageDialog("Varen er tilføjet til udlevering");
                 messageDialog.CancelCommandIndex = 1;
                 await messageDialog.ShowAsync();
@@ -107,7 +119,9 @@ namespace RFStorage.ViewModel
             }
            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public async void TilbageleveringsSortering()
         {
             if (SelectedVare != null)

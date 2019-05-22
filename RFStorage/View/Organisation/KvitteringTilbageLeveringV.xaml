@@ -1,18 +1,17 @@
 ﻿<Page
-    x:Class="RFStorage.View.Organisation.KvitteringV"
+    x:Class="RFStorage.View.Organisation.KvitteringTilbageLeveringV"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:RFStorage.View.Organisation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:RFStorage.ViewModel"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    mc:Ignorable="d">
-
-
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
     <Grid>
         <RelativePanel >
-            <!--<ListView Margin="400,200,0,0" Header="Udleverings Info" Width="auto" Height="Auto" ItemsSource="{Binding UdleveringsOC, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <!--<ListView Margin="400,200,0,0" Header="Tilbageleverings Info" Width="auto" Height="Auto" ItemsSource="{Binding TilbageLeveringsOC, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <RelativePanel>

@@ -24,9 +24,11 @@ namespace RFStorage.View.Organisation
     /// </summary>
     public sealed partial class OrganisationListeIndleveringV : Page
     {
+        private OrganisationVM organisationVm { get; set; }
         public OrganisationListeIndleveringV()
         {
             this.InitializeComponent();
+            organisationVm = new OrganisationVM();
         }
 
         private void SuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -48,12 +50,12 @@ namespace RFStorage.View.Organisation
 
         private void ButtonBase_OnClickTilbagelever(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            this.Frame.Navigate(typeof(KvitteringTilbageLeveringV));
         }
 
         private void ButtonBaseClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            organisationVm.TilbageleveringsSortering();
         }
     }
 

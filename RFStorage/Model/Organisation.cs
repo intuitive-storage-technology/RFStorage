@@ -11,7 +11,7 @@ namespace RFStorage.Model
     {
         #region Properties
 
-       
+      
 
         /// <summary>
         /// Properties til Organisation, Get/Set sørger for at hente eller sætte værdierne på instancefields med unikke for objekter.
@@ -21,21 +21,26 @@ namespace RFStorage.Model
         public ObservableCollection<Vare> UdleveretVareOC { get; set; }
         public ObservableCollection<Kvittering> OrganisationKvitterings { get; set; }
         public ObservableCollection<Vare> OrgansationOC { get; set; }
+        public ObservableCollection<Vare> TilbageLeveringsVare { get; set; }
+
         #endregion
 
 
         #region Constructor
         /// <summary>
-        /// /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
+        /// SKRIV NOGET HER
         /// </summary>
         /// <param name="organisationId"></param>
         /// <param name="organisationNavn"></param>
-         public Organisation(int organisationId, string organisationNavn, ObservableCollection<Vare> udleveretVareOc)
+        /// <param name="udleveretVareOc"></param>
+        /// <param name="organisationKvitterings"></param>
+        /// <param name="tilbageLeveringsVare"></param>
+         public Organisation(int organisationId, string organisationNavn, ObservableCollection<Vare> udleveretVareOc, ObservableCollection<Vare> tilbageLeveringsVare)
         {
             OrganisationID = organisationId;
             OrganisationNavn = organisationNavn;
             UdleveretVareOC = udleveretVareOc;
-          
+           TilbageLeveringsVare = tilbageLeveringsVare;
         }
         
         #endregion
