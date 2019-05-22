@@ -32,8 +32,6 @@ namespace RFStorage.View.Login
             LoginVM = new LogInVM();
         }
 
-        
-
         private void SetSelectedBrugerCommand(object sender, RoutedEventArgs e)
         {
             LoginVM.SetSelectedBruger();

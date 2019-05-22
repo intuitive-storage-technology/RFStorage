@@ -48,13 +48,9 @@ namespace RFStorage.ViewModel
             set => _selectedBruger = value;
         }
 
-        
-
-        public string BrugerID { get; set; }
-        public string Brugernavn { get; set; }
-        public string Password { get; set; }
-        public bool Type { get; set; }
-
+        /// <summary>
+        /// PasswordInput and BrugerInput has OnPropertyChanged() implemented to set the value correctly
+        /// </summary>
         public string PasswordInput
         {
             get { return _passwordInput; }
@@ -67,11 +63,13 @@ namespace RFStorage.ViewModel
 
             set { _brugerIDInput = value; OnPropertyChanged(); }
         }
-        
+
         #endregion
 
         #region Contructor
-
+        /// <summary>
+        /// Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
+        /// </summary>
         public LogInVM()
         {
             BrugerSingleton = BrugerSingleton.Instance;
@@ -80,6 +78,9 @@ namespace RFStorage.ViewModel
         #endregion
 
         #region Methods
+        /// <summary>
+        /// SetSelectedBruger() goes through the List of users in the DB and finds the user and selects them from the username input.
+        /// </summary>
         public void SetSelectedBruger()
         {
             foreach (var Bruger in BrugerSingleton.BrugerOC)
@@ -92,30 +93,37 @@ namespace RFStorage.ViewModel
             }
         }
 
+        /// <summary>
+        /// LoginCheckCommand() checks if user's input password matches the password the user has in DB. And navigates the user to the right menu depending on their access level.
+        /// If the username or the password is not correct it creates a message box to notify the user and keeps them on the login page.
+        /// </summary>
         public async void LoginCheckCommand()
         {
-            if (SelectedBruger.Password == PasswordInput)
+            try
             {
-                if (SelectedBruger.Type == true)
+                if (SelectedBruger.Password == PasswordInput)
                 {
-                    Frame loginFrame = Window.Current.Content as Frame;
-                    if (loginFrame != null)
+                    if (SelectedBruger.Type == true)
                     {
+                        Frame loginFrame = Window.Current.Content as Frame;
+                        if (loginFrame != null)
+                        {
                         loginFrame.Navigate(typeof(MainPage));
+                        }
                     }
-                }
 
-                else
-                {
-                    Frame loginFrame = Window.Current.Content as Frame;
-                    if (loginFrame != null)
+                    else
                     {
-                        loginFrame.Navigate(typeof(FrivilligNavigationV));
+                        Frame loginFrame = Window.Current.Content as Frame;
+                        if (loginFrame != null)
+                        {
+                            loginFrame.Navigate(typeof(FrivilligNavigationV));
+                        }
                     }
                 }
             }
 
-            else
+            catch (Exception)
             {
                 // Create the message dialog and set its content
                 var messageDialog = new MessageDialog("Username and Password does not match.");
