@@ -10,25 +10,11 @@ namespace UnitTestForRFStorage
     public class UnitTest1
     {
 
-        //Test Kvittering exeception
-        #region Kvittering test
-        [TestMethod]
-        public void TestKviterring()
-        {
-            try
-            {
-                RFStorage.Model.Kvittering.KvitteringUd();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
-        #endregion  
-
-
         #region Bruger Test
+        /// <summary>
+        /// Undersøger om Add og Remove metoderne fungere.
+        /// </summary>
+
 
         //Tester om Bruger add virker 
         [TestMethod]
@@ -53,6 +39,9 @@ namespace UnitTestForRFStorage
 
         #region Vare
         //Test om Vare add virker
+        /// <summary>
+        /// Undersøger om Add og Remove metoderne fungere.
+        /// </summary>
         [TestMethod]
         public void TestVareAdd()
         {
@@ -78,6 +67,27 @@ namespace UnitTestForRFStorage
             }
         }
         #endregion
+
+        #region Kvittering test
+        /// <summary>
+        /// Da der ikke er mange muligheder, for at bruge denne klasse. Har man valgt at vise Kvitteringens sikring mod en null modtagelse.
+        /// </summary>
+
+        //Test Kvittering exeception
+        [TestMethod]
+        public void TestKviterring()
+        {
+            try
+            {
+                RFStorage.Model.Kvittering.KvitteringUd();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        #endregion  
 
     }
 }
