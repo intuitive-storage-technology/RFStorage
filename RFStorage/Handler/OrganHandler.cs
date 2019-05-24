@@ -8,7 +8,7 @@ using RFStorage.ViewModel;
 
 namespace RFStorage.Handler
 {
-    class OrganHandler
+    public class OrganHandler
     {
         #region Properties
 

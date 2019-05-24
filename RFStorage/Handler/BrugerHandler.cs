@@ -9,7 +9,7 @@ using RFStorage.ViewModel;
 
 namespace RFStorage.Handler
 {
-    class BrugerHandler
+    public class BrugerHandler
     {
         #region Properties
         public CreateRemoveBrugerVM CreateRemoveBrugerVM { get; set; }

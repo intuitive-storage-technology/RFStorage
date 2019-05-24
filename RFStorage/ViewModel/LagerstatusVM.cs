@@ -14,7 +14,7 @@ using RFStorage.RelayCommands;
 
 namespace RFStorage.ViewModel
 {
-    class LagerstatusVM : INotifyPropertyChanged
+    public class LagerstatusVM : INotifyPropertyChanged
     {
 
         #region PropertyChanged

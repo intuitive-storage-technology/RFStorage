@@ -10,7 +10,7 @@ using RFStorage.Annotations;
 
 namespace RFStorage.Model
 {
-    class LagerstatusSingleton : INotifyPropertyChanged
+    public class LagerstatusSingleton : INotifyPropertyChanged
     {
         #region PropertyChanged
         /// <summary>
