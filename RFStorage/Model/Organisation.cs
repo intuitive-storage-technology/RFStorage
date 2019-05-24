@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFStorage.Model
 {
-    class Organisation
+    public class Organisation
     {
         #region Properties
 

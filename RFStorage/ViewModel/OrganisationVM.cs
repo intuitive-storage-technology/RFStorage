@@ -16,7 +16,7 @@ using RFStorage.RelayCommands;
 
 namespace RFStorage.ViewModel
 {
-    class OrganisationVM : INotifyPropertyChanged
+    public class OrganisationVM : INotifyPropertyChanged
     {
         #region Properties
         #region Instance Field

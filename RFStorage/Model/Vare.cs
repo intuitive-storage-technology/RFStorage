@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFStorage.Model
 {
-    class Vare
+    public class Vare
     {
         #region Properties
         /// <summary>

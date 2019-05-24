@@ -16,7 +16,7 @@ using Syncfusion.Pdf.Parsing;
 
 namespace RFStorage.Model
 {
-    class Kvittering
+    public class Kvittering
     {
 
 

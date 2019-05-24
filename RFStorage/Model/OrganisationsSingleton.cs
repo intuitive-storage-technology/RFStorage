@@ -10,7 +10,7 @@ using RFStorage.Annotations;
 
 namespace RFStorage.Model
 {
-    class OrganisationsSingleton : INotifyPropertyChanged
+    public class OrganisationsSingleton : INotifyPropertyChanged
     {
         #region Instance Field
 
