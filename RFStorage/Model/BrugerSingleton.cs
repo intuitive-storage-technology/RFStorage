@@ -41,16 +41,29 @@ namespace RFStorage.Model
             BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
             BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", true));
             BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
-            BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
+            BrugerOC.Add(new Bruger("Celi4162", "Celine Stenberg", "passwordceline", true));
             BrugerOC.Add(new Bruger("Test7213", "Random Pleb", "passwordtest", false));
         }
         #endregion
 
         #region Methods
 
+        public void Add(Bruger bruger)
+        {
+            Persistency.PersistencyServices<Bruger>.PostObject(bruger, "api/Brugers");
+            BrugerOC.Add(bruger);
+        }
+
+        public void Remove(Bruger bruger)
+        {
+            Persistency.PersistencyServices<Bruger>.DeleteObject(bruger.BrugerID, "api/Brugers/");
+            BrugerOC.Remove(bruger);
+        }
+
+
         public void BrugereTest()
         {
-            BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
+            BrugerOC.Add(new Bruger("Celi4162", "Celine Stenberg", "passwordceline", true));
             BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
             BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
             BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));

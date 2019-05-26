@@ -11,7 +11,7 @@ namespace RFStorage.Model
 {
     class Bruger
     {
-        private bool _type = false;
+        private bool _brugerType = false;
         private string _brugerTypeMessage;
 
         #region Properties
@@ -23,19 +23,16 @@ namespace RFStorage.Model
         public string BrugerID { get; set; }
 
         public string Brugernavn { get; set; }
-        public string Password { get; set; }
 
-        public bool Type
-        {
-            get => _type;
-            set => _type = value;
-        }
+        public string BrugerPassword { get; set; }
+
+        public bool BrugerType { get; set; }
 
         public string BrugerTypeMessage
         {
 
             get {
-                if (Type == true)
+                if (BrugerType == true)
                 {
                     return "Admin";
                 }
@@ -56,17 +53,17 @@ namespace RFStorage.Model
         /// <param name="brugernavn"></param>
         /// <param name="password"></param>
         /// <param name="type"></param>
-        public Bruger(string brugerID, string brugernavn, string password, bool type)
+        public Bruger(string brugerID, string brugernavn, string brugerPassword, bool brugerType)
         {
             BrugerID = brugerID;
             Brugernavn = brugernavn;
-            Password = password;
-            Type = type;
+            BrugerPassword = brugerPassword;
+            BrugerType = brugerType;
         }
 
         public override string ToString()
         {
-            return $"{nameof(BrugerID)}: {BrugerID}, {nameof(Brugernavn)}: {Brugernavn}, {nameof(Password)}: {Password}, {nameof(Type)}: {Type}";
+            return $"{nameof(BrugerID)}: {BrugerID}, {nameof(Brugernavn)}: {Brugernavn}, {nameof(BrugerPassword)}: {BrugerPassword}, {nameof(BrugerType)}: {BrugerType}, {nameof(BrugerTypeMessage)}: {BrugerTypeMessage}";
         }
 
         #endregion

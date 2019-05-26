@@ -85,11 +85,11 @@ namespace RFStorage.Model
         }
         #endregion
 
-        //Remove and save to Persistancy
-        public void Remove(Vare vareToBeRomoved)
-        {
-            VareOC.Remove(vareToBeRomoved);
-            Persistency.PersistencyServices.SaveVaresAsJsonAsync(VareOC);
-        }
+        ////Remove and save to Persistancy
+        //public void Remove(Vare vareToBeRomoved)
+        //{
+        //    VareOC.Remove(vareToBeRomoved);
+        //    Persistency.PersistencyServices.SaveVaresAsJsonAsync(VareOC);
+        //}
     }
 }
