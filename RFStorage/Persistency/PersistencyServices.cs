@@ -65,7 +65,7 @@ namespace RFStorage.Persistency
         }
 
         //Delete
-        public static async void DeleteObject(string objID, string api)
+        public static async void DeleteObject(string api, string objID)
         {
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
@@ -88,7 +88,7 @@ namespace RFStorage.Persistency
         }
 
         //Post
-        public static async void PostObject(T obj, string api)
+        public static async void PostObject(string api, T obj)
         {
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;

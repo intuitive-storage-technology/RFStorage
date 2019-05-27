@@ -50,13 +50,13 @@ namespace RFStorage.Model
 
         public void Add(Bruger bruger)
         {
-            Persistency.PersistencyServices<Bruger>.PostObject(bruger, "api/Brugers");
+            Persistency.PersistencyServices<Bruger>.PostObject("api/Brugers", bruger);
             BrugerOC.Add(bruger);
         }
 
         public void Remove(Bruger bruger)
         {
-            Persistency.PersistencyServices<Bruger>.DeleteObject(bruger.BrugerID, "api/Brugers/");
+            Persistency.PersistencyServices<Bruger>.DeleteObject("api/Brugers/", bruger.BrugerID);
             BrugerOC.Remove(bruger);
         }
 
