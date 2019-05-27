@@ -1,0 +1,32 @@
+\hypertarget{class_r_f_storage_1_1_annotations_1_1_can_be_null_attribute}{}\section{R\+F\+Storage.\+Annotations.\+Can\+Be\+Null\+Attribute Class Reference}
+\label{class_r_f_storage_1_1_annotations_1_1_can_be_null_attribute}\index{RFStorage.Annotations.CanBeNullAttribute@{RFStorage.Annotations.CanBeNullAttribute}}
+
+
+Indicates that the value of the marked element could be {\ttfamily null} sometimes, so the check for {\ttfamily null} is necessary before its usage.  
+
+
+Inheritance diagram for R\+F\+Storage.\+Annotations.\+Can\+Be\+Null\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_storage_1_1_annotations_1_1_can_be_null_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates that the value of the marked element could be {\ttfamily null} sometimes, so the check for {\ttfamily null} is necessary before its usage. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[CanBeNull] \textcolor{keywordtype}{object} Test() => \textcolor{keyword}{null};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} UseTest() \{}
+\DoxyCodeLine{  var p = Test();}
+\DoxyCodeLine{  var s = p.ToString(); \textcolor{comment}{// Warning: Possible 'System.NullReferenceException'}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Properties/Annotations.\+cs\end{DoxyCompactItemize}

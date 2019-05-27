@@ -1,0 +1,34 @@
+\hypertarget{class_r_f_storage_1_1_provides_context_attribute}{}\section{R\+F\+Storage.\+Provides\+Context\+Attribute Class Reference}
+\label{class_r_f_storage_1_1_provides_context_attribute}\index{RFStorage.ProvidesContextAttribute@{RFStorage.ProvidesContextAttribute}}
+
+
+Indicates the type member or parameter of some type, that should be used instead of all other ways to get the value that type. This annotation is useful when you have some \char`\"{}context\char`\"{} value evaluated and stored somewhere, meaning that all other ways to get this value must be consolidated with existing one.  
+
+
+Inheritance diagram for R\+F\+Storage.\+Provides\+Context\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_storage_1_1_provides_context_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates the type member or parameter of some type, that should be used instead of all other ways to get the value that type. This annotation is useful when you have some \char`\"{}context\char`\"{} value evaluated and stored somewhere, meaning that all other ways to get this value must be consolidated with existing one. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }Foo \{}
+\DoxyCodeLine{  [ProvidesContext] IBarService \_barService = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} ProcessNode(INode node) \{}
+\DoxyCodeLine{    DoSomething(node, node.GetGlobalServices().Bar);}
+\DoxyCodeLine{    \textcolor{comment}{//              \string^ Warning: use value of '\_barService' field}}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Properties/Annotations.\+cs\end{DoxyCompactItemize}
