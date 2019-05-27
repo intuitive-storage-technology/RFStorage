@@ -56,9 +56,11 @@ namespace UnitTestForRFStorage
             Vare vare = new Vare("UTNavn",1,"UTTtpe",1);
             LagerstatusSingleton.Instance.VareOC.Add(vare);
             LagerstatusSingleton.Instance.VareOC.Remove(vare);
+            var expectedCount = 0;
             try
             {
-                LagerstatusSingleton.Instance.VareOC.Count.CompareTo(1);
+                Assert.AreEqual(LagerstatusSingleton.Instance.VareOC.Count,expectedCount);
+                //LagerstatusSingleton.Instance.VareOC.Count.CompareTo(1);
             }
             catch (Exception e)
             {

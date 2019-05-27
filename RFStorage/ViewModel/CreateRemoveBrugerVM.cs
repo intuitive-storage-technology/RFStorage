@@ -78,7 +78,7 @@ namespace RFStorage.ViewModel
         {
             BrugerSingleton = BrugerSingleton.Instance;
             BrugerHandler = new Handler.BrugerHandler(this);
-            BrugerSingleton.BrugereTest();
+            BrugerSingleton.GetBrugere();
         }
 
         #endregion

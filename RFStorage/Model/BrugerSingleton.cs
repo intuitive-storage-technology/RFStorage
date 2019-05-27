@@ -38,11 +38,7 @@ namespace RFStorage.Model
         private BrugerSingleton()
         {
             BrugerOC = new ObservableCollection<Bruger>();
-            BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
-            BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", true));
-            BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
-            BrugerOC.Add(new Bruger("Celi4162", "Celine Stenberg", "passwordceline", true));
-            BrugerOC.Add(new Bruger("Test7213", "Random Pleb", "passwordtest", false));
+            
         }
         #endregion
 
@@ -60,14 +56,28 @@ namespace RFStorage.Model
             BrugerOC.Remove(bruger);
         }
 
-
-        public void BrugereTest()
+        public async void GetBrugere()
         {
-            BrugerOC.Add(new Bruger("Celi4162", "Celine Stenberg", "passwordceline", true));
-            BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
-            BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
-            BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));
+           BrugerOC.Clear();
+           LoadEventAsync();
         }
+
+        public async void LoadEventAsync()
+        {
+            var brugere = await Persistency.PersistencyServices<Bruger>.GetObject("api/Brugers/");
+            if (brugere != null)
+            {
+                foreach (var e in brugere)
+                {
+                        BrugerOC.Add(e);
+                }
+            }
+            else
+            {
+                BrugerOC.Add(new Bruger("TestTest", "FilipTest", "Kartoffel", true));
+            }
+        }
+        
 
         #endregion
 
