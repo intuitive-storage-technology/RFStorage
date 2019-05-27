@@ -16,7 +16,7 @@ namespace RFStorage.Model
         public int OrdreID { get; set; }
         public int OrganisationID { get; set; }
         public ObservableCollection<Vare> VareOC { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime OrdreDateTime { get; set; }
         public string Note { get; set; }
         public string Udleverer { get; set; }
 
@@ -30,15 +30,15 @@ namespace RFStorage.Model
         /// <param name="ordreId"></param>
         /// <param name="organisationId"></param>
         /// <param name="vareOc"></param>
-        /// <param name="dateTime"></param>
+        /// <param name="ordreDateTime"></param>
         /// <param name="note"></param>
         /// <param name="udleverer"></param>
-        public Ordre(int ordreId, int organisationId, ObservableCollection<Vare> vareOc, DateTime dateTime, string note, string udleverer)
+        public Ordre(int ordreId, int organisationId, ObservableCollection<Vare> vareOc, DateTime ordreDateTime, string note, string udleverer)
         {
             OrdreID = ordreId;
             OrganisationID = organisationId;
             VareOC = vareOc;
-            DateTime = dateTime;
+            OrdreDateTime = ordreDateTime;
             Note = note;
             Udleverer = udleverer;
         }
@@ -51,7 +51,7 @@ namespace RFStorage.Model
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{nameof(OrdreID)}: {OrdreID}, {nameof(OrganisationID)}: {OrganisationID}, {nameof(VareOC)}: {VareOC}, {nameof(DateTime)}: {DateTime}, {nameof(Note)}: {Note}, {nameof(Udleverer)}: {Udleverer}";
+            return $"{nameof(OrdreID)}: {OrdreID}, {nameof(OrganisationID)}: {OrganisationID}, {nameof(VareOC)}: {VareOC}, {nameof(OrdreDateTime)}: {OrdreDateTime}, {nameof(Note)}: {Note}, {nameof(Udleverer)}: {Udleverer}";
         }
         #endregion
     }

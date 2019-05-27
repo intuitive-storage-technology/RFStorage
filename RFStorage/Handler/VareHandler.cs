@@ -62,11 +62,11 @@ namespace RFStorage.Handler
         #endregion
 
         #region Commands
-        
+
         //CommandInvokedHandler
         private void CommandInvokedHandler(IUICommand command)
         {
-            LagerstatusVM.LagerstatusSingleton.Remove(LagerstatusVM.SelectedVare);
+            LagerstatusVM.LagerstatusSingleton.VareOC.Remove(LagerstatusVM.SelectedVare);
         }
 
         #endregion

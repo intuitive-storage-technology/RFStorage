@@ -112,9 +112,9 @@ namespace RFStorage.ViewModel
         {
             try
             {
-                if (SelectedBruger.Password == PasswordInput)
+                if (SelectedBruger.BrugerPassword == PasswordInput)
                 {
-                    if (SelectedBruger.Type == true)
+                    if (SelectedBruger.BrugerType == true)
                     {
                         Frame loginFrame = Window.Current.Content as Frame;
                         if (loginFrame != null)
