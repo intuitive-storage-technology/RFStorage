@@ -32,8 +32,8 @@ namespace RFStorage.ViewModel
 
         public string BrugerID { get; set; }
         public string Brugernavn { get; set; }
-        public string Password { get; set; }
-        public bool Type { get; set; }
+        public string BrugerPassword { get; set; }
+        public bool BrugerType { get; set; }
 
         #region ICommand
 
@@ -78,7 +78,7 @@ namespace RFStorage.ViewModel
         {
             BrugerSingleton = BrugerSingleton.Instance;
             BrugerHandler = new Handler.BrugerHandler(this);
-            BrugerSingleton.BrugereTest();
+            BrugerSingleton.GetBrugere();
         }
 
         #endregion

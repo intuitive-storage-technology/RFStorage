@@ -11,6 +11,10 @@ namespace RFStorage.Handler
 {
     public class BrugerHandler
     {
+        //Rasmus
+        //private const string _postGetApi = "api/Brugers";
+        //private const string _putDeleteApi = "api/Brugers/";
+        
         #region Properties
         public CreateRemoveBrugerVM CreateRemoveBrugerVM { get; set; }
         #endregion
@@ -30,14 +34,9 @@ namespace RFStorage.Handler
             CreateRemoveBrugerVM.SelectedBruger = bruger;
         }
 
-        public void CreateBruger()
+        public async void CreateBruger()
         {
-            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("celi4162", "Celine Stenberg", "passwordceline", true));
-            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Emil7213", "Emil Mosbaek", "passwordemil", true));
-            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Fili3801", "Filip Hansen", "passwordfilip", true));
-            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger("Jonx2905", "Jon Lam", "passwordjon", false));
-
-            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn, CreateRemoveBrugerVM.Password, CreateRemoveBrugerVM.Type));
+            CreateRemoveBrugerVM.BrugerSingleton.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn, CreateRemoveBrugerVM.BrugerPassword, CreateRemoveBrugerVM.BrugerType));
             
         }
 
@@ -64,7 +63,8 @@ namespace RFStorage.Handler
 
         private void CommandInvokedHandler(IUICommand command)
         {
-            CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Remove(CreateRemoveBrugerVM.SelectedBruger);
+            //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Remove(CreateRemoveBrugerVM.SelectedBruger);
+            CreateRemoveBrugerVM.BrugerSingleton.Remove(CreateRemoveBrugerVM.SelectedBruger);
         }
 
         #endregion

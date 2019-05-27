@@ -121,7 +121,7 @@
                      TextWrapping="Wrap"
                      RelativePanel.Below="Brugernavn"
                      Margin="0,50,0,0"
-                     Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                     Text="{Binding BrugerPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 </TextBox>
                 <CheckBox x:Name="AdminCheckbox"
                       Content="Er denne bruger en admin?"                      
@@ -130,7 +130,7 @@
                       RelativePanel.RightOf="BrugerPassword"
                       RelativePanel.AlignBottomWith="BrugerPassword"
                       Margin="50,50,0,0"
-                          IsChecked="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                          IsChecked="{Binding BrugerType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
 
                 </CheckBox>
             </RelativePanel>

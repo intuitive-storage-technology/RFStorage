@@ -1,0 +1,43 @@
+\hypertarget{class_r_f_storage_1_1_base_type_required_attribute}{}\section{R\+F\+Storage.\+Base\+Type\+Required\+Attribute Class Reference}
+\label{class_r_f_storage_1_1_base_type_required_attribute}\index{RFStorage.BaseTypeRequiredAttribute@{RFStorage.BaseTypeRequiredAttribute}}
+
+
+When applied to a target attribute, specifies a requirement for any type marked with the target attribute to implement or inherit specific type or types.  
+
+
+Inheritance diagram for R\+F\+Storage.\+Base\+Type\+Required\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_storage_1_1_base_type_required_attribute}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_f_storage_1_1_base_type_required_attribute_a6a120f605834d99741a274e39f1d8df8}\label{class_r_f_storage_1_1_base_type_required_attribute_a6a120f605834d99741a274e39f1d8df8}} 
+{\bfseries Base\+Type\+Required\+Attribute} (\mbox{[}Not\+Null\mbox{]} Type base\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_r_f_storage_1_1_base_type_required_attribute_a24f55f70d785f960dabef947a11a84f2}\label{class_r_f_storage_1_1_base_type_required_attribute_a24f55f70d785f960dabef947a11a84f2}} 
+Type {\bfseries Base\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+When applied to a target attribute, specifies a requirement for any type marked with the target attribute to implement or inherit specific type or types. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[BaseTypeRequired(typeof(IComponent)] \textcolor{comment}{// Specify requirement}}
+\DoxyCodeLine{\textcolor{keyword}{class} ComponentAttribute : Attribute \{ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{[Component] \textcolor{comment}{// ComponentAttribute requires implementing IComponent interface}}
+\DoxyCodeLine{\textcolor{keyword}{class }MyComponent : IComponent \{ \}}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Properties/Annotations.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,38 @@
+\hypertarget{class_r_f_storage_1_1_cannot_apply_equality_operator_attribute}{}\section{R\+F\+Storage.\+Cannot\+Apply\+Equality\+Operator\+Attribute Class Reference}
+\label{class_r_f_storage_1_1_cannot_apply_equality_operator_attribute}\index{RFStorage.CannotApplyEqualityOperatorAttribute@{RFStorage.CannotApplyEqualityOperatorAttribute}}
+
+
+Indicates that the value of the marked type (or its derivatives) cannot be compared using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} operators and {\ttfamily Equals()} should be used instead. However, using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} for comparison with {\ttfamily null} is always permitted.  
+
+
+Inheritance diagram for R\+F\+Storage.\+Cannot\+Apply\+Equality\+Operator\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_storage_1_1_cannot_apply_equality_operator_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates that the value of the marked type (or its derivatives) cannot be compared using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} operators and {\ttfamily Equals()} should be used instead. However, using \textquotesingle{}==\textquotesingle{} or \textquotesingle{}!=\textquotesingle{} for comparison with {\ttfamily null} is always permitted. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[CannotApplyEqualityOperator]}
+\DoxyCodeLine{\textcolor{keyword}{class }NoEquality \{ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }UsesNoEquality \{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} Test() \{}
+\DoxyCodeLine{    var ca1 = \textcolor{keyword}{new} NoEquality();}
+\DoxyCodeLine{    var ca2 = \textcolor{keyword}{new} NoEquality();}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (ca1 != \textcolor{keyword}{null}) \{ \textcolor{comment}{// OK}}
+\DoxyCodeLine{      \textcolor{keywordtype}{bool} condition = ca1 == ca2; \textcolor{comment}{// Warning}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Properties/Annotations.\+cs\end{DoxyCompactItemize}
