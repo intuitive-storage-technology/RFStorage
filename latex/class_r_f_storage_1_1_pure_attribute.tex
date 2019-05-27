@@ -1,0 +1,31 @@
+\hypertarget{class_r_f_storage_1_1_pure_attribute}{}\section{R\+F\+Storage.\+Pure\+Attribute Class Reference}
+\label{class_r_f_storage_1_1_pure_attribute}\index{RFStorage.PureAttribute@{RFStorage.PureAttribute}}
+
+
+Indicates that a method does not make any observable state changes. The same as {\ttfamily System.\+Diagnostics.\+Contracts.\+Pure\+Attribute}.  
+
+
+Inheritance diagram for R\+F\+Storage.\+Pure\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_storage_1_1_pure_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Indicates that a method does not make any observable state changes. The same as {\ttfamily System.\+Diagnostics.\+Contracts.\+Pure\+Attribute}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Pure] \textcolor{keywordtype}{int} Multiply(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y) => x * y;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} M() \{}
+\DoxyCodeLine{  Multiply(123, 42); \textcolor{comment}{// Waring: Return value of pure method is not used}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Properties/Annotations.\+cs\end{DoxyCompactItemize}

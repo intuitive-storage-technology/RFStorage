@@ -1,0 +1,74 @@
+\hypertarget{class_r_f_storage_1_1_model_1_1_kvittering}{}\section{R\+F\+Storage.\+Model.\+Kvittering Class Reference}
+\label{class_r_f_storage_1_1_model_1_1_kvittering}\index{RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_kvittering_a6a7506b6a7e016913e26e7e23e9cd381}{Kvittering\+Tilbage}} ()
+\begin{DoxyCompactList}\small\item\em Denne metode initialisere selve pdfdokumentet og memorystreamen og kalder til sidst Save-\/hjælpe metoden. Dette pdfdokumentet bruges i forbindelse med tilbagelevering \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_kvittering_acca12604adfc5e6138058525889eae03}{Kvittering\+Ud}} ()
+\begin{DoxyCompactList}\small\item\em Denne metode initialisere selve pdfdokumentet og memorystreamen og kalder til sidst Save-\/hjælpe metoden. Dette pdfdokument er til brug ved Udlevering. \end{DoxyCompactList}\item 
+static async void \mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_kvittering_abf9118e928ad6a4cc9e771b0875353ab}{Save}} (Stream stream, string filename)
+\begin{DoxyCompactList}\small\item\em Denne metode hjælper med at gemme pdf-\/filen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_f_storage_1_1_model_1_1_kvittering_a6a7506b6a7e016913e26e7e23e9cd381}\label{class_r_f_storage_1_1_model_1_1_kvittering_a6a7506b6a7e016913e26e7e23e9cd381}} 
+\index{RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}!KvitteringTilbage@{KvitteringTilbage}}
+\index{KvitteringTilbage@{KvitteringTilbage}!RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}}
+\subsubsection{\texorpdfstring{KvitteringTilbage()}{KvitteringTilbage()}}
+{\footnotesize\ttfamily static void R\+F\+Storage.\+Model.\+Kvittering.\+Kvittering\+Tilbage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Denne metode initialisere selve pdfdokumentet og memorystreamen og kalder til sidst Save-\/hjælpe metoden. Dette pdfdokumentet bruges i forbindelse med tilbagelevering 
+
+Exceptions \+: Vil smide en null-\/reference exception hvis Tilbageleverings\+OC peger på null og dette ikke er checket før klassen bliver kaldt 
+
+Pre-\/\+Conditions \+: Udleverings\+OC skal eksistere, dette gøres i forbindelse med udlevering af varene 
+
+Post-\/\+Conditions \+: Efter metoden er kørt igennem, vil opsætningen af pdf-\/dokumentet være lavet og Save metoden kaldes. 
+
+Side-\/\+Effects \+: Der er ingen sideeffects ved denne metode \mbox{\Hypertarget{class_r_f_storage_1_1_model_1_1_kvittering_acca12604adfc5e6138058525889eae03}\label{class_r_f_storage_1_1_model_1_1_kvittering_acca12604adfc5e6138058525889eae03}} 
+\index{RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}!KvitteringUd@{KvitteringUd}}
+\index{KvitteringUd@{KvitteringUd}!RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}}
+\subsubsection{\texorpdfstring{KvitteringUd()}{KvitteringUd()}}
+{\footnotesize\ttfamily static void R\+F\+Storage.\+Model.\+Kvittering.\+Kvittering\+Ud (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Denne metode initialisere selve pdfdokumentet og memorystreamen og kalder til sidst Save-\/hjælpe metoden. Dette pdfdokument er til brug ved Udlevering. 
+
+Exceptions \+: Vil smide en null-\/reference exception hvis Udleverings\+OC peger på null og dette ikke bliver tjekket ordentligt før metoden bliver kaldt
+
+Pre-\/\+Conditions \+: Udleverings\+OC skal eksistere, dette gøres i forbindelse med udlevering af varene 
+
+Post-\/\+Conditions \+: Efter metoden er kørt igennem, vil opsætningen af pdf-\/dokumentet være lavet og Save metoden kaldes. 
+
+Side-\/effects \+: Der er ingen sideeffects ved denne metode\mbox{\Hypertarget{class_r_f_storage_1_1_model_1_1_kvittering_abf9118e928ad6a4cc9e771b0875353ab}\label{class_r_f_storage_1_1_model_1_1_kvittering_abf9118e928ad6a4cc9e771b0875353ab}} 
+\index{RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}!Save@{Save}}
+\index{Save@{Save}!RFStorage.Model.Kvittering@{RFStorage.Model.Kvittering}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily static async void R\+F\+Storage.\+Model.\+Kvittering.\+Save (\begin{DoxyParamCaption}\item[{Stream}]{stream,  }\item[{string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Denne metode hjælper med at gemme pdf-\/filen. 
+
+Preconditions \+: Kvitterings filen skal være initialieret og det samme skal memorystreamen
+
+Post\+Condition \+: Der vil herefter være en fil gemt på pcen der kører programmet
+
+Side-\/\+Effects \+: Der er ingen side effects ved brugen af denne metode
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Model/Kvittering.\+cs\end{DoxyCompactItemize}

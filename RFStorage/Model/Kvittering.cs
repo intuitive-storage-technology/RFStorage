@@ -19,13 +19,15 @@ namespace RFStorage.Model
     public class Kvittering
     {
 
-
         /// <summary>
-        /// Denne metode er opdelt i forskellige Regions. Hver region definere forskellige dele af
-        /// pdf-kvitteringens udseende. Derudover initialisere den PDF-siden, dens pages og dens graphics.
-        /// Til sidst initialisere den en memorystream og kalder save metoden der hjælper med at gemme kvitteringen og vise den.
-        /// Metoden har en using, da den del er disposable.
-        /// </summary>
+        /// Denne metode initialisere selve pdfdokumentet og memorystreamen og kalder til sidst Save-hjælpe metoden.
+        /// Dette pdfdokumentet bruges i forbindelse med tilbagelevering
+        ///  </summary>
+        /// <remarks> Exceptions : Vil smide en null-reference exception hvis TilbageleveringsOC peger på null og dette ikke er checket før klassen bliver kaldt </remarks>
+        /// <remarks> Pre-Conditions : UdleveringsOC skal eksistere, dette gøres i forbindelse med udlevering af varene </remarks>
+        /// <remarks> Post-Conditions : Efter metoden er kørt igennem, vil opsætningen af pdf-dokumentet være lavet og Save metoden kaldes. </remarks>
+        /// <remarks>          Side-Effects : Der er ingen sideeffects ved denne metode </remarks>
+        
         public static void KvitteringTilbage()
         {
             using (PdfDocument pdfdoc = new PdfDocument())
@@ -44,8 +46,7 @@ namespace RFStorage.Model
                 // Indeholder en bevægelighed for at kunne gøre den betinget af variabler.
 
                 #region Body 
-
-                //TODO - Variable defineret body
+                
 
                 var count = 0;
                 PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
@@ -173,12 +174,17 @@ namespace RFStorage.Model
             }
 
         }
+        /// <summary>
+        /// Denne metode initialisere selve pdfdokumentet og memorystreamen og kalder til sidst Save-hjælpe metoden.
+        /// Dette pdfdokument er til brug ved Udlevering.
+        ///  </summary>
+        /// <remarks> Exceptions : Vil smide en null-reference exception hvis UdleveringsOC peger på null og dette ikke bliver tjekket ordentligt før metoden bliver kaldt</remarks>
+        /// <remarks> Pre-Conditions : UdleveringsOC skal eksistere, dette gøres i forbindelse med udlevering af varene </remarks>
+        /// <remarks> Post-Conditions : Efter metoden er kørt igennem, vil opsætningen af pdf-dokumentet være lavet og Save metoden kaldes. </remarks>
+        /// <remarks> Side-effects : Der er ingen sideeffects ved denne metode</remarks>
         public static void KvitteringUd()
         {
-
-
             using (PdfDocument pdfdoc = new PdfDocument())
-
             {
                 // Genererer sammen med using-sætningen selve pdfen.
 
@@ -323,14 +329,22 @@ namespace RFStorage.Model
         }
 
 
-
+        /// <summary>
+        ///  Denne metode hjælper med at gemme pdf-filen.
+        /// </summary>
+        /// <remarks> Preconditions : Kvitterings filen skal være initialieret og det samme
+        /// skal memorystreamen</remarks>
+        /// <remarks> PostCondition : Der vil herefter være en fil gemt på pcen der kører programmet</remarks>
+        /// <remarks> Side-Effects : Der er ingen side effects ved brugen af denne metode</remarks>
+        /// <param name="stream"></param>
+        /// <param name="filename"></param>
         public static async void Save(Stream stream, string filename)
         {
 
            stream.Position = 0;
            StorageFile stFile;
 
-           // If-expressionen definerer om filen gemmes på en computer eller på et andet design. Den fortsætter i If hvis det ikke er en telefon/Tablet
+           // If-else-expressionen bestemmer om filen gemmes på en computer eller på et andet stykke hardware som en tablet. Den fortsætter i If hvis det ikke er en telefon/Tablet
            // ellers går den til else hvor den gemmer som var den en telefon.
            // På computer vil den give en default extension på filen, et suggested filename og vælge en filtype
            // FileTypeChoices tager en dictionary som tager en string og en List<string>. Denne Dictionary indeholder de valide filtyper der kan gemmes som
@@ -353,13 +367,13 @@ namespace RFStorage.Model
               // filen vil denne metode åbne den.
            if (stFile != null)
            {
-              Windows.Storage.Streams.IRandomAccessStream fileStream =
-              await stFile.OpenAsync(FileAccessMode.ReadWrite);
-              Stream st = fileStream.AsStreamForWrite();
-              st.Write((stream as MemoryStream).ToArray(), 0, (int) stream.Length);
-              st.Flush();
-              st.Dispose();
-              fileStream.Dispose();
+              //Windows.Storage.Streams.IRandomAccessStream fileStream =
+              //await stFile.OpenAsync(FileAccessMode.ReadWrite);
+              //Stream st = fileStream.AsStreamForWrite();
+              //st.Write((stream as MemoryStream).ToArray(), 0, (int) stream.Length);
+              //st.Flush();
+              //st.Dispose();
+              //fileStream.Dispose();
               MessageDialog msgDialog =
               new MessageDialog("Do you want to view the Document", "File created.");
               UICommand yesCmd = new UICommand("Yes");

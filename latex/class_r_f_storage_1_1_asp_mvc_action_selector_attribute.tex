@@ -1,0 +1,31 @@
+\hypertarget{class_r_f_storage_1_1_asp_mvc_action_selector_attribute}{}\section{R\+F\+Storage.\+Asp\+Mvc\+Action\+Selector\+Attribute Class Reference}
+\label{class_r_f_storage_1_1_asp_mvc_action_selector_attribute}\index{RFStorage.AspMvcActionSelectorAttribute@{RFStorage.AspMvcActionSelectorAttribute}}
+
+
+A\+S\+P.\+N\+ET M\+VC attribute. When applied to a parameter of an attribute, indicates that this parameter is an M\+VC action name.  
+
+
+Inheritance diagram for R\+F\+Storage.\+Asp\+Mvc\+Action\+Selector\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_storage_1_1_asp_mvc_action_selector_attribute}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+A\+S\+P.\+N\+ET M\+VC attribute. When applied to a parameter of an attribute, indicates that this parameter is an M\+VC action name. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[ActionName(\textcolor{stringliteral}{"Foo"})]}
+\DoxyCodeLine{\textcolor{keyword}{public} ActionResult Login(\textcolor{keywordtype}{string} returnUrl) \{}
+\DoxyCodeLine{  ViewBag.ReturnUrl = Url.Action(\textcolor{stringliteral}{"Foo"}); \textcolor{comment}{// OK}}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} RedirectToAction(\textcolor{stringliteral}{"Bar"}); \textcolor{comment}{// Error: Cannot resolve action}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roskilde Festival/source/repos/intuitive-\/storage-\/technology/\+R\+F\+Storage/\+R\+F\+Storage/\+Properties/Annotations.\+cs\end{DoxyCompactItemize}
