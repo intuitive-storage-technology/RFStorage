@@ -11,7 +11,7 @@
 
 
     <Grid>
-        <RelativePanel >
+        <RelativePanel>
             <!--<ListView Margin="400,200,0,0" Header="Udleverings Info" Width="auto" Height="Auto" ItemsSource="{Binding UdleveringsOC, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -22,7 +22,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
-            <Button Margin="400,400,0,0" Width="Auto"  Height="Auto" Content="Godkend Tilbagelevering"  Click="ButtonBase_OnClick"></Button>
+            <Button
+                Width="Auto"
+                Height="Auto"
+                Margin="400,400,0,0"
+                Click="ButtonBase_OnClick"
+                Content="Godkend Tilbagelevering" />
         </RelativePanel>
     </Grid>
 </Page>

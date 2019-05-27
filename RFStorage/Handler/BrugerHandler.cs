@@ -9,7 +9,7 @@ using RFStorage.ViewModel;
 
 namespace RFStorage.Handler
 {
-    class BrugerHandler
+    public class BrugerHandler
     {
         //Rasmus
         //private const string _postGetApi = "api/Brugers";

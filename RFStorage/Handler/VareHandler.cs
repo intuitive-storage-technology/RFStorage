@@ -9,7 +9,7 @@ using RFStorage.ViewModel;
 
 namespace RFStorage.Handler
 {
-    class VareHandler 
+    public class VareHandler 
     {
         #region Properties
         public string VareNavn { get; set; }

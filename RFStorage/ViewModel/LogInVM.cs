@@ -17,9 +17,14 @@ using RFStorage.View.NavigationsSystem;
 
 namespace RFStorage.ViewModel
 {
+    /// <summary>
+    /// Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet. 
+    /// </summary>
+    /// <remarks> Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet.</remarks>
     class LogInVM : INotifyPropertyChanged
     {
         #region PropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -79,8 +84,11 @@ namespace RFStorage.ViewModel
 
         #region Methods
         /// <summary>
-        /// SetSelectedBruger() goes through the List of users in the DB and finds the user and selects them from the username input.
+        /// SetSelectedBruger() går igennem listen af brugere og prøver at matche det indtastede brugerID med brugerID i DB, og sætter dem til SelectedBruger hvis brugerID findes.
         /// </summary>
+        /// <remarks> Exception: Ingen.</remarks>
+        /// <remarks> Preconditions: For at være successfuld skal metoden have et brugerID input</remarks>
+        /// <remarks> Postconditions: Sætter brugeren til SelectedBruger og break loop.</remarks>
         public void SetSelectedBruger()
         {
             foreach (var Bruger in BrugerSingleton.BrugerOC)
@@ -94,9 +102,12 @@ namespace RFStorage.ViewModel
         }
 
         /// <summary>
-        /// LoginCheckCommand() checks if user's input password matches the password the user has in DB. And navigates the user to the right menu depending on their access level.
-        /// If the username or the password is not correct it creates a message box to notify the user and keeps them on the login page.
+        /// LoginCheckCommand() checker om brugerens input password matcher passwordet som brugeren har i DB. Og navigatere brugeren til den rigtige menu alt efter deres adgangsniveau.
+        /// Exception: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen.
         /// </summary>
+        /// <remarks> Exceptions: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen.</remarks>
+        /// <remarks> Preconditions: SelectedBruger er set og at SelectedBruger.Password findes i DB.</remarks>
+        /// <remarks> Postconditions: Navigere brugen til den rigtige menu alt efter deres adgangsniveau for at begrænse/åbne muligheder for brugeren</remarks>
         public async void LoginCheckCommand()
         {
             try
@@ -142,6 +153,12 @@ namespace RFStorage.ViewModel
             }
         }
 
+        /// <summary>
+        /// Rydder input-felter for indtastet data.
+        /// </summary>
+        /// <remarks> Exceptions: Ingen.</remarks>
+        /// <remarks> Preconditions: Ingen.</remarks>
+        /// <remarks> Postconditions: Rydder inout-felter for indtastet data, hvis til stede.</remarks>
         public void LogOut()
         {
             _selectedBruger = null;

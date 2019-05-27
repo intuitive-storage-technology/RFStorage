@@ -9,7 +9,7 @@ using RFStorage.Annotations;
 
 namespace RFStorage.Model
 {
-    class Bruger
+    public class Bruger
     {
         private bool _brugerType = false;
         private string _brugerTypeMessage;

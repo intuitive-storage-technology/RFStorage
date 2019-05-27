@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFStorage.Model
 {
-    class Organisation
+    public class Organisation
     {
         #region Properties
 
@@ -28,7 +28,7 @@ namespace RFStorage.Model
 
         #region Constructor
         /// <summary>
-        /// SKRIV NOGET HER
+        /// Constructor - initialisere de forskellige parametre
         /// </summary>
         /// <param name="organisationId"></param>
         /// <param name="organisationNavn"></param>
@@ -40,7 +40,7 @@ namespace RFStorage.Model
             OrganisationID = organisationId;
             OrganisationNavn = organisationNavn;
             UdleveretVareOC = udleveretVareOc;
-           TilbageLeveringsVare = tilbageLeveringsVare;
+            TilbageLeveringsVare = tilbageLeveringsVare;
         }
         
         #endregion

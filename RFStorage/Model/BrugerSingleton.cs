@@ -10,7 +10,7 @@ using RFStorage.Annotations;
 
 namespace RFStorage.Model
 {
-    class BrugerSingleton : INotifyPropertyChanged
+    public class BrugerSingleton : INotifyPropertyChanged
     {
 
 

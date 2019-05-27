@@ -14,7 +14,7 @@ using RFStorage.RelayCommands;
 
 namespace RFStorage.ViewModel
 {
-    class CreateRemoveBrugerVM : INotifyPropertyChanged
+    public class CreateRemoveBrugerVM : INotifyPropertyChanged
     {
         #region Instance Field
 
