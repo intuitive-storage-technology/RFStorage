@@ -25,18 +25,22 @@ namespace RFStorage.ViewModel
         #endregion
 
         #region Properties
-
+        /// <summary>
+        /// De tre properties nedenunder henter eller sætter værdier for et objekt af deres respektive typer.
+        /// </summary>
         public BrugerSingleton BrugerSingleton { get; set; }
         public Handler.BrugerHandler BrugerHandler { get; set; }
         public static Bruger SelectedBruger { get; set; }
 
+        /// <summary>
+        /// De fire properties nedenunder henter eller sætter basisværdierne for et objekt af typen Bruger.
+        /// </summary>
         public string BrugerID { get; set; }
         public string Brugernavn { get; set; }
         public string BrugerPassword { get; set; }
         public bool BrugerType { get; set; }
 
         #region ICommand
-
         public ICommand CreateBrugerCommand
         {
             get
@@ -58,6 +62,7 @@ namespace RFStorage.ViewModel
             set { _deleteBrugerCommand = value; }
         }
 
+
         public ICommand SelectedBrugerCommand
         {
             get
@@ -73,7 +78,11 @@ namespace RFStorage.ViewModel
         #endregion
 
         #region Constructor
-
+        /// <summary>
+        /// Instansierer BrugerSingleton, hvis ikke den er blevet instansieret endnu.
+        /// laver en ny instans af Brugerhandler.
+        /// Henter en opdateret version af observable collectionen BrugerOC
+        /// </summary>
         public CreateRemoveBrugerVM()
         {
             BrugerSingleton = BrugerSingleton.Instance;

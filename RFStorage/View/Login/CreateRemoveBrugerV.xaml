@@ -149,13 +149,8 @@
                         RelativePanel.RightOf="CancelNyBruger"
                         Margin="50,0,0,0"
                         Command="{Binding CreateBrugerCommand}"></Button>
-                <!-- Knappen her bindes til CreateBruger, men metoden skal laves om uden dummydata-->
             </RelativePanel>
         </RelativePanel>
 
-
-        <!--<ListView Margin="331,241,337,242" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding BrugerSingleton.BrugerOC}"/>-->
-
-        <!--<Button x:Name="Users" Content="Show Users" HorizontalAlignment="Left" Margin="610,796,0,0" VerticalAlignment="Top" Width="275" Height="89" Command="{Binding CreateBrugerCommand}"></Button>-->
     </Grid>
 </Page>
