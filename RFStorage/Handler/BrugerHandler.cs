@@ -23,7 +23,7 @@ namespace RFStorage.Handler
         }
         #endregion
 
-        #region Method
+        #region Method 
         /// <summary>
         /// Sætter SelectedBruger fra CreateRemoveBrugerVM til at være lig en bestemt instans af et objekt af typen Bruger.
         /// </summary>
