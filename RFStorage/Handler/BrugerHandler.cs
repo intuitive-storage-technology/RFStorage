@@ -11,10 +11,6 @@ namespace RFStorage.Handler
 {
     public class BrugerHandler
     {
-        //Rasmus
-        //private const string _postGetApi = "api/Brugers";
-        //private const string _putDeleteApi = "api/Brugers/";
-        
         #region Properties
         public CreateRemoveBrugerVM CreateRemoveBrugerVM { get; set; }
         #endregion
@@ -27,19 +23,29 @@ namespace RFStorage.Handler
         }
         #endregion
 
-        #region Method
-
+        #region Method 
+        /// <summary>
+        /// Sætter SelectedBruger fra CreateRemoveBrugerVM til at være lig en bestemt instans af et objekt af typen Bruger.
+        /// </summary>
+        /// <param name="bruger"></param>
         public void SetSelectedBruger(Bruger bruger)
         {
             CreateRemoveBrugerVM.SelectedBruger = bruger;
         }
 
+        /// <summary>
+        /// Laver et objekt af typen Bruger vha. metoden Add i BrugerSingleton.
+        /// </summary>
         public async void CreateBruger()
         {
-            CreateRemoveBrugerVM.BrugerSingleton.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn, CreateRemoveBrugerVM.BrugerPassword, CreateRemoveBrugerVM.BrugerType));
+            CreateRemoveBrugerVM.BrugerSingleton.Add(new Bruger(CreateRemoveBrugerVM.BrugerID, CreateRemoveBrugerVM.Brugernavn,
+                CreateRemoveBrugerVM.BrugerPassword, CreateRemoveBrugerVM.BrugerType));
             
         }
 
+        /// <summary>
+        /// Spørger om man vil slette en specifik bruger. Hvis ja, så sletter den brugeren vha metoden CommandInvokedHandler.
+        /// </summary>
         public async void DeleteBruger()
         {
 
@@ -61,6 +67,10 @@ namespace RFStorage.Handler
             await messageDialog.ShowAsync();
         }
 
+        /// <summary>
+        /// Sletter et objekt af typen Bruger.
+        /// </summary>
+        /// <param name="command"></param>
         private void CommandInvokedHandler(IUICommand command)
         {
             //CreateRemoveBrugerVM.BrugerSingleton.BrugerOC.Remove(CreateRemoveBrugerVM.SelectedBruger);

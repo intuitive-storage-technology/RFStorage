@@ -9,11 +9,8 @@ using RFStorage.Annotations;
 
 namespace RFStorage.Model
 {
-    public class Bruger
+   public class Bruger
     {
-        private bool _brugerType = false;
-        private string _brugerTypeMessage;
-
         #region Properties
 
         /// <summary>
@@ -61,6 +58,10 @@ namespace RFStorage.Model
             BrugerType = brugerType;
         }
 
+        /// <summary>
+        /// laver alle propertiesne og deres indhold til en string, så et ListView kan vise strengen i GUI.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{nameof(BrugerID)}: {BrugerID}, {nameof(Brugernavn)}: {Brugernavn}, {nameof(BrugerPassword)}: {BrugerPassword}, {nameof(BrugerType)}: {BrugerType}, {nameof(BrugerTypeMessage)}: {BrugerTypeMessage}";
