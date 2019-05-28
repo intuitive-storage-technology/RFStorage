@@ -1,5 +1,10 @@
-\hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m}{}\section{R\+F\+Storage.\+View\+Model.\+Log\+In\+VM Class Reference}
+\section{R\+F\+Storage.\+View\+Model.\+Log\+In\+VM Class Reference}
 \label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m}\index{RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}}
+
+
+Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet.  
+
+
 Inheritance diagram for R\+F\+Storage.\+View\+Model.\+Log\+In\+VM\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,54 +14,116 @@ Inheritance diagram for R\+F\+Storage.\+View\+Model.\+Log\+In\+VM\+:\begin{figur
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a2891f59e80b62625cf4936217b1777fe}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a2891f59e80b62625cf4936217b1777fe}} 
-void {\bfseries Set\+Selected\+Bruger} ()
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a3f82fc8d1f02be9b58238808255b0e29}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a3f82fc8d1f02be9b58238808255b0e29}} 
-async void {\bfseries Login\+Check\+Command} ()
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_ad6305899737df834684a7d75eea8bf24}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_ad6305899737df834684a7d75eea8bf24}} 
-void {\bfseries Log\+Out} ()
-\end{DoxyCompactItemize}
+\textbf{ Log\+In\+VM} ()
+\begin{DoxyCompactList}\small\item\em Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read. \end{DoxyCompactList}\item 
+void \textbf{ Set\+Selected\+Bruger} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Set\+Selected\+Bruger()}{p.}{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a2891f59e80b62625cf4936217b1777fe} går igennem listen af brugere og prøver at matche det indtastede bruger\+ID med bruger\+ID i DB, og sætter dem til Selected\+Bruger hvis bruger\+ID findes. \end{DoxyCompactList}\item 
+async void \textbf{ Login\+Check\+Command} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Login\+Check\+Command()}{p.}{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a3f82fc8d1f02be9b58238808255b0e29} checker om brugerens input password matcher passwordet som brugeren har i DB. Og navigatere brugeren til den rigtige menu alt efter deres adgangsniveau. Exception\+: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen. \end{DoxyCompactList}\item 
+void \textbf{ Log\+Out} ()
+\begin{DoxyCompactList}\small\item\em Rydder input-\/felter for indtastet data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a668fc613263a575fb30246413729bb32}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a668fc613263a575fb30246413729bb32}} 
-virtual void {\bfseries On\+Property\+Changed} (\mbox{[}Caller\+Member\+Name\mbox{]} string property\+Name=null)
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a668fc613263a575fb30246413729bb32}} 
+virtual void {\bfseries On\+Property\+Changed} ([Caller\+Member\+Name] string property\+Name=null)
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aa3bf0995e6f646e9c7f3d561c42384b6}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aa3bf0995e6f646e9c7f3d561c42384b6}} 
-\mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_bruger_singleton}{Bruger\+Singleton}} {\bfseries Bruger\+Singleton}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aa3bf0995e6f646e9c7f3d561c42384b6}} 
+\textbf{ Bruger\+Singleton} {\bfseries Bruger\+Singleton}\hspace{0.3cm}{\ttfamily  [get, set]}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aacfa2c8305a231ef707dda310427e747}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aacfa2c8305a231ef707dda310427e747}} 
-static \mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_bruger}{Bruger}} {\bfseries Selected\+Bruger}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aacfa2c8305a231ef707dda310427e747}} 
+static \textbf{ Bruger} {\bfseries Selected\+Bruger}\hspace{0.3cm}{\ttfamily  [get, set]}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_abe6cb0ce6c629b1d4e47b151393eb3f9}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_abe6cb0ce6c629b1d4e47b151393eb3f9}} 
-string {\bfseries Bruger\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a66bdfc82fe97d481c3fd98912cc4e008}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a66bdfc82fe97d481c3fd98912cc4e008}} 
-string {\bfseries Brugernavn}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a5e737523416f63ddd7238af1150cc5ac}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a5e737523416f63ddd7238af1150cc5ac}} 
-string {\bfseries Password}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a0930134a9cdd940e604b745b846e5d3c}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a0930134a9cdd940e604b745b846e5d3c}} 
-bool {\bfseries Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_ac4283089e5faf0a4ff80b8dac06c96c6}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_ac4283089e5faf0a4ff80b8dac06c96c6}} 
-string {\bfseries Password\+Input}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a24dba87f9f6d0413b81606233257fead}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a24dba87f9f6d0413b81606233257fead}} 
-string {\bfseries Bruger\+I\+D\+Input}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \textbf{ Password\+Input}\hspace{0.3cm}{\ttfamily  [get, set]}
+\begin{DoxyCompactList}\small\item\em Password\+Input and Bruger\+Input has On\+Property\+Changed() implemented to set the value correctly \end{DoxyCompactList}\item 
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a24dba87f9f6d0413b81606233257fead}} 
+string {\bfseries Bruger\+I\+D\+Input}\hspace{0.3cm}{\ttfamily  [get, set]}
 \end{DoxyCompactItemize}
 \subsection*{Events}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aca1fe8ce0da0bbc34aae8dceebf86639}\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aca1fe8ce0da0bbc34aae8dceebf86639}} 
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aca1fe8ce0da0bbc34aae8dceebf86639}} 
 Property\+Changed\+Event\+Handler {\bfseries Property\+Changed}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet. 
+
+Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet.
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_aafee5a7812fc698063ad46dcd08e7c88}} 
+\index{RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}!LogInVM@{LogInVM}}
+\index{LogInVM@{LogInVM}!RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}}
+\subsubsection{LogInVM()}
+{\footnotesize\ttfamily R\+F\+Storage.\+View\+Model.\+Log\+In\+V\+M.\+Log\+In\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a3f82fc8d1f02be9b58238808255b0e29}} 
+\index{RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}!LoginCheckCommand@{LoginCheckCommand}}
+\index{LoginCheckCommand@{LoginCheckCommand}!RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}}
+\subsubsection{LoginCheckCommand()}
+{\footnotesize\ttfamily async void R\+F\+Storage.\+View\+Model.\+Log\+In\+V\+M.\+Login\+Check\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Login\+Check\+Command()}{p.}{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a3f82fc8d1f02be9b58238808255b0e29} checker om brugerens input password matcher passwordet som brugeren har i DB. Og navigatere brugeren til den rigtige menu alt efter deres adgangsniveau. Exception\+: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen. 
+
+Exceptions\+: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen.
+
+Preconditions\+: Selected\+Bruger er set og at Selected\+Bruger.\+Password findes i DB.
+
+Postconditions\+: Navigere brugen til den rigtige menu alt efter deres adgangsniveau for at begrænse/åbne muligheder for brugeren\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_ad6305899737df834684a7d75eea8bf24}} 
+\index{RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}!LogOut@{LogOut}}
+\index{LogOut@{LogOut}!RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}}
+\subsubsection{LogOut()}
+{\footnotesize\ttfamily void R\+F\+Storage.\+View\+Model.\+Log\+In\+V\+M.\+Log\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rydder input-\/felter for indtastet data. 
+
+Exceptions\+: Ingen.
+
+Preconditions\+: Ingen.
+
+Postconditions\+: Rydder inout-\/felter for indtastet data, hvis til stede.\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a2891f59e80b62625cf4936217b1777fe}} 
+\index{RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}!SetSelectedBruger@{SetSelectedBruger}}
+\index{SetSelectedBruger@{SetSelectedBruger}!RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}}
+\subsubsection{SetSelectedBruger()}
+{\footnotesize\ttfamily void R\+F\+Storage.\+View\+Model.\+Log\+In\+V\+M.\+Set\+Selected\+Bruger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Set\+Selected\+Bruger()}{p.}{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_a2891f59e80b62625cf4936217b1777fe} går igennem listen af brugere og prøver at matche det indtastede bruger\+ID med bruger\+ID i DB, og sætter dem til Selected\+Bruger hvis bruger\+ID findes. 
+
+Exception\+: Ingen.
+
+Preconditions\+: For at være successfuld skal metoden have et bruger\+ID input
+
+Postconditions\+: Sætter brugeren til Selected\+Bruger og break loop.
+
+\subsection{Property Documentation}
+\mbox{\label{class_r_f_storage_1_1_view_model_1_1_log_in_v_m_ac4283089e5faf0a4ff80b8dac06c96c6}} 
+\index{RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}!PasswordInput@{PasswordInput}}
+\index{PasswordInput@{PasswordInput}!RFStorage.ViewModel.LogInVM@{RFStorage.ViewModel.LogInVM}}
+\subsubsection{PasswordInput}
+{\footnotesize\ttfamily string R\+F\+Storage.\+View\+Model.\+Log\+In\+V\+M.\+Password\+Input\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Password\+Input and Bruger\+Input has On\+Property\+Changed() implemented to set the value correctly 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

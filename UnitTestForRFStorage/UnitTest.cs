@@ -64,8 +64,7 @@ namespace UnitTestForRFStorage
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                MessageDialog ms = new MessageDialog(e.Message);
             }
         }
         #endregion

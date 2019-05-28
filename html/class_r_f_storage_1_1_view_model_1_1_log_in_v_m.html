@@ -76,6 +76,9 @@ $(function() {
 <div class="title">RFStorage.ViewModel.LogInVM Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet.  
+ <a href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for RFStorage.ViewModel.LogInVM:</div>
 <div class="dyncontent">
@@ -85,14 +88,17 @@ Inheritance diagram for RFStorage.ViewModel.LogInVM:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2891f59e80b62625cf4936217b1777fe"><td class="memItemLeft" align="right" valign="top"><a id="a2891f59e80b62625cf4936217b1777fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSelectedBruger</b> ()</td></tr>
+<tr class="memitem:aafee5a7812fc698063ad46dcd08e7c88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#aafee5a7812fc698063ad46dcd08e7c88">LogInVM</a> ()</td></tr>
+<tr class="memdesc:aafee5a7812fc698063ad46dcd08e7c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.  <a href="#aafee5a7812fc698063ad46dcd08e7c88">More...</a><br /></td></tr>
+<tr class="separator:aafee5a7812fc698063ad46dcd08e7c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2891f59e80b62625cf4936217b1777fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#a2891f59e80b62625cf4936217b1777fe">SetSelectedBruger</a> ()</td></tr>
+<tr class="memdesc:a2891f59e80b62625cf4936217b1777fe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#a2891f59e80b62625cf4936217b1777fe" title="SetSelectedBruger() går igennem listen af brugere og prøver at matche det indtastede brugerID med brugerID ...">SetSelectedBruger()</a> går igennem listen af brugere og prøver at matche det indtastede brugerID med brugerID i DB, og sætter dem til SelectedBruger hvis brugerID findes.  <a href="#a2891f59e80b62625cf4936217b1777fe">More...</a><br /></td></tr>
 <tr class="separator:a2891f59e80b62625cf4936217b1777fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f82fc8d1f02be9b58238808255b0e29"><td class="memItemLeft" align="right" valign="top"><a id="a3f82fc8d1f02be9b58238808255b0e29"></a>
-async void&#160;</td><td class="memItemRight" valign="bottom"><b>LoginCheckCommand</b> ()</td></tr>
+<tr class="memitem:a3f82fc8d1f02be9b58238808255b0e29"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#a3f82fc8d1f02be9b58238808255b0e29">LoginCheckCommand</a> ()</td></tr>
+<tr class="memdesc:a3f82fc8d1f02be9b58238808255b0e29"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#a3f82fc8d1f02be9b58238808255b0e29" title="LoginCheckCommand() checker om brugerens input password matcher passwordet som brugeren har i DB....">LoginCheckCommand()</a> checker om brugerens input password matcher passwordet som brugeren har i DB. Og navigatere brugeren til den rigtige menu alt efter deres adgangsniveau. Exception: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen.  <a href="#a3f82fc8d1f02be9b58238808255b0e29">More...</a><br /></td></tr>
 <tr class="separator:a3f82fc8d1f02be9b58238808255b0e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6305899737df834684a7d75eea8bf24"><td class="memItemLeft" align="right" valign="top"><a id="ad6305899737df834684a7d75eea8bf24"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogOut</b> ()</td></tr>
+<tr class="memitem:ad6305899737df834684a7d75eea8bf24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#ad6305899737df834684a7d75eea8bf24">LogOut</a> ()</td></tr>
+<tr class="memdesc:ad6305899737df834684a7d75eea8bf24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rydder input-felter for indtastet data.  <a href="#ad6305899737df834684a7d75eea8bf24">More...</a><br /></td></tr>
 <tr class="separator:ad6305899737df834684a7d75eea8bf24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -109,20 +115,8 @@ Properties</h2></td></tr>
 <tr class="memitem:aacfa2c8305a231ef707dda310427e747"><td class="memItemLeft" align="right" valign="top"><a id="aacfa2c8305a231ef707dda310427e747"></a>
 static <a class="el" href="class_r_f_storage_1_1_model_1_1_bruger.html">Bruger</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SelectedBruger</b><code> [get, set]</code></td></tr>
 <tr class="separator:aacfa2c8305a231ef707dda310427e747"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe6cb0ce6c629b1d4e47b151393eb3f9"><td class="memItemLeft" align="right" valign="top"><a id="abe6cb0ce6c629b1d4e47b151393eb3f9"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>BrugerID</b><code> [get, set]</code></td></tr>
-<tr class="separator:abe6cb0ce6c629b1d4e47b151393eb3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66bdfc82fe97d481c3fd98912cc4e008"><td class="memItemLeft" align="right" valign="top"><a id="a66bdfc82fe97d481c3fd98912cc4e008"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Brugernavn</b><code> [get, set]</code></td></tr>
-<tr class="separator:a66bdfc82fe97d481c3fd98912cc4e008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e737523416f63ddd7238af1150cc5ac"><td class="memItemLeft" align="right" valign="top"><a id="a5e737523416f63ddd7238af1150cc5ac"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Password</b><code> [get, set]</code></td></tr>
-<tr class="separator:a5e737523416f63ddd7238af1150cc5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0930134a9cdd940e604b745b846e5d3c"><td class="memItemLeft" align="right" valign="top"><a id="a0930134a9cdd940e604b745b846e5d3c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Type</b><code> [get, set]</code></td></tr>
-<tr class="separator:a0930134a9cdd940e604b745b846e5d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4283089e5faf0a4ff80b8dac06c96c6"><td class="memItemLeft" align="right" valign="top"><a id="ac4283089e5faf0a4ff80b8dac06c96c6"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>PasswordInput</b><code> [get, set]</code></td></tr>
+<tr class="memitem:ac4283089e5faf0a4ff80b8dac06c96c6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#ac4283089e5faf0a4ff80b8dac06c96c6">PasswordInput</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac4283089e5faf0a4ff80b8dac06c96c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">PasswordInput and BrugerInput has OnPropertyChanged() implemented to set the value correctly  <a href="#ac4283089e5faf0a4ff80b8dac06c96c6">More...</a><br /></td></tr>
 <tr class="separator:ac4283089e5faf0a4ff80b8dac06c96c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24dba87f9f6d0413b81606233257fead"><td class="memItemLeft" align="right" valign="top"><a id="a24dba87f9f6d0413b81606233257fead"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>BrugerIDInput</b><code> [get, set]</code></td></tr>
@@ -134,6 +128,121 @@ Events</h2></td></tr>
 PropertyChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyChanged</b></td></tr>
 <tr class="separator:aca1fe8ce0da0bbc34aae8dceebf86639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet. </p>
+<p>Bruges til at styre login sekvensen og vise hvilken bruger der er logget ind i programmet.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aafee5a7812fc698063ad46dcd08e7c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafee5a7812fc698063ad46dcd08e7c88">&#9670;&nbsp;</a></span>LogInVM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RFStorage.ViewModel.LogInVM.LogInVM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3f82fc8d1f02be9b58238808255b0e29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f82fc8d1f02be9b58238808255b0e29">&#9670;&nbsp;</a></span>LoginCheckCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void RFStorage.ViewModel.LogInVM.LoginCheckCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#a3f82fc8d1f02be9b58238808255b0e29" title="LoginCheckCommand() checker om brugerens input password matcher passwordet som brugeren har i DB....">LoginCheckCommand()</a> checker om brugerens input password matcher passwordet som brugeren har i DB. Og navigatere brugeren til den rigtige menu alt efter deres adgangsniveau. Exception: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen. </p>
+<p>Exceptions: Hvis brugernavn eller password ikke er rigtigt, så skaber metoden en Message dialog for at underrette brugeren om at indtastningen og beholder brugeren på login pagen.</p>
+<p>Preconditions: SelectedBruger er set og at SelectedBruger.Password findes i DB.</p>
+<p>Postconditions: Navigere brugen til den rigtige menu alt efter deres adgangsniveau for at begrænse/åbne muligheder for brugeren</p>
+
+</div>
+</div>
+<a id="ad6305899737df834684a7d75eea8bf24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6305899737df834684a7d75eea8bf24">&#9670;&nbsp;</a></span>LogOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RFStorage.ViewModel.LogInVM.LogOut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rydder input-felter for indtastet data. </p>
+<p>Exceptions: Ingen.</p>
+<p>Preconditions: Ingen.</p>
+<p>Postconditions: Rydder inout-felter for indtastet data, hvis til stede.</p>
+
+</div>
+</div>
+<a id="a2891f59e80b62625cf4936217b1777fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2891f59e80b62625cf4936217b1777fe">&#9670;&nbsp;</a></span>SetSelectedBruger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RFStorage.ViewModel.LogInVM.SetSelectedBruger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_r_f_storage_1_1_view_model_1_1_log_in_v_m.html#a2891f59e80b62625cf4936217b1777fe" title="SetSelectedBruger() går igennem listen af brugere og prøver at matche det indtastede brugerID med brugerID ...">SetSelectedBruger()</a> går igennem listen af brugere og prøver at matche det indtastede brugerID med brugerID i DB, og sætter dem til SelectedBruger hvis brugerID findes. </p>
+<p>Exception: Ingen.</p>
+<p>Preconditions: For at være successfuld skal metoden have et brugerID input</p>
+<p>Postconditions: Sætter brugeren til SelectedBruger og break loop.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="ac4283089e5faf0a4ff80b8dac06c96c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4283089e5faf0a4ff80b8dac06c96c6">&#9670;&nbsp;</a></span>PasswordInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string RFStorage.ViewModel.LogInVM.PasswordInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PasswordInput and BrugerInput has OnPropertyChanged() implemented to set the value correctly </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/Roskilde Festival/source/repos/intuitive-storage-technology/RFStorage/RFStorage/ViewModel/LogInVM.cs</li>
 </ul>
