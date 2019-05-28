@@ -1,13 +1,16 @@
-\hypertarget{class_r_f_storage_1_1_persistency_1_1_persistency_services}{}\section{R\+F\+Storage.\+Persistency.\+Persistency\+Services Class Reference}
-\label{class_r_f_storage_1_1_persistency_1_1_persistency_services}\index{RFStorage.Persistency.PersistencyServices@{RFStorage.Persistency.PersistencyServices}}
+\section{R\+F\+Storage.\+Persistency.\+Persistency\+Services$<$ T $>$ Class Template Reference}
+\label{class_r_f_storage_1_1_persistency_1_1_persistency_services}\index{RFStorage.Persistency.PersistencyServices$<$ T $>$@{RFStorage.Persistency.PersistencyServices$<$ T $>$}}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_persistency_1_1_persistency_services_a9b3b73e9abc1f79d221a5f43bcb9fc5e}\label{class_r_f_storage_1_1_persistency_1_1_persistency_services_a9b3b73e9abc1f79d221a5f43bcb9fc5e}} 
-static async void {\bfseries Save\+Vares\+As\+Json\+Async} (Observable\+Collection$<$ \mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_vare}{Vare}} $>$ Vares)
+\mbox{\label{class_r_f_storage_1_1_persistency_1_1_persistency_services_a041b9aad843c198aa6a4e3676c42e6f2}} 
+static async Task$<$ List$<$ T $>$ $>$ {\bfseries Get\+Object} (string api)
 \item 
-\mbox{\Hypertarget{class_r_f_storage_1_1_persistency_1_1_persistency_services_a3e948758b411fffe7993d0bc7a428df4}\label{class_r_f_storage_1_1_persistency_1_1_persistency_services_a3e948758b411fffe7993d0bc7a428df4}} 
-static async Task$<$ List$<$ \mbox{\hyperlink{class_r_f_storage_1_1_model_1_1_vare}{Vare}} $>$ $>$ {\bfseries Load\+Vares\+From\+Json\+Async} ()
+\mbox{\label{class_r_f_storage_1_1_persistency_1_1_persistency_services_aff43d7280709a949b60ae684fffe30f5}} 
+static async void {\bfseries Delete\+Object} (string api, string obj\+ID)
+\item 
+\mbox{\label{class_r_f_storage_1_1_persistency_1_1_persistency_services_a0ee031903d49c842de09d19c1273b944}} 
+static async void {\bfseries Post\+Object} (string api, T obj)
 \end{DoxyCompactItemize}
 
 

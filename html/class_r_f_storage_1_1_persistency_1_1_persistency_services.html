@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Rfstorage: RFStorage.Persistency.PersistencyServices Class Reference</title>
+<title>Rfstorage: RFStorage.Persistency.PersistencyServices&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,22 +67,24 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_r_f_storage_1_1_persistency_1_1_persistency_services-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RFStorage.Persistency.PersistencyServices Class Reference</div>  </div>
+<div class="title">RFStorage.Persistency.PersistencyServices&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b3b73e9abc1f79d221a5f43bcb9fc5e"><td class="memItemLeft" align="right" valign="top"><a id="a9b3b73e9abc1f79d221a5f43bcb9fc5e"></a>
-static async void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveVaresAsJsonAsync</b> (ObservableCollection&lt; <a class="el" href="class_r_f_storage_1_1_model_1_1_vare.html">Vare</a> &gt; Vares)</td></tr>
-<tr class="separator:a9b3b73e9abc1f79d221a5f43bcb9fc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e948758b411fffe7993d0bc7a428df4"><td class="memItemLeft" align="right" valign="top"><a id="a3e948758b411fffe7993d0bc7a428df4"></a>
-static async Task&lt; List&lt; <a class="el" href="class_r_f_storage_1_1_model_1_1_vare.html">Vare</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LoadVaresFromJsonAsync</b> ()</td></tr>
-<tr class="separator:a3e948758b411fffe7993d0bc7a428df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041b9aad843c198aa6a4e3676c42e6f2"><td class="memItemLeft" align="right" valign="top"><a id="a041b9aad843c198aa6a4e3676c42e6f2"></a>
+static async Task&lt; List&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetObject</b> (string api)</td></tr>
+<tr class="separator:a041b9aad843c198aa6a4e3676c42e6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff43d7280709a949b60ae684fffe30f5"><td class="memItemLeft" align="right" valign="top"><a id="aff43d7280709a949b60ae684fffe30f5"></a>
+static async void&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteObject</b> (string api, string objID)</td></tr>
+<tr class="separator:aff43d7280709a949b60ae684fffe30f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee031903d49c842de09d19c1273b944"><td class="memItemLeft" align="right" valign="top"><a id="a0ee031903d49c842de09d19c1273b944"></a>
+static async void&#160;</td><td class="memItemRight" valign="bottom"><b>PostObject</b> (string api, T obj)</td></tr>
+<tr class="separator:a0ee031903d49c842de09d19c1273b944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/Roskilde Festival/source/repos/intuitive-storage-technology/RFStorage/RFStorage/Persistency/PersistencyServices.cs</li>
