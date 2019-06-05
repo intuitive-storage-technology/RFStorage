@@ -70,6 +70,7 @@ namespace RFStorage.ViewModel
         {
             VareHandler = new Handler.VareHandler(this);
             LagerstatusSingleton = LagerstatusSingleton.Instance;
+            LagerstatusSingleton.GetVare();
         }
 
         #endregion

@@ -65,7 +65,7 @@ namespace RFStorage.Persistency
             }
         }
 
-        //Delete
+        //Delete w/ objID as a string
         public static async void DeleteObject(string api, string objID)
         {
             HttpClientHandler handler = new HttpClientHandler();
@@ -87,6 +87,31 @@ namespace RFStorage.Persistency
                 }
             }
         }
+
+
+        //Delete w/ objID as an int
+        public static async void DeleteObjectInt(string api, int objID)
+        {
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.DeleteAsync(api + objID).Result;
+                }
+                catch (Exception ex)
+                {
+                    await new MessageDialog(ex.Message).ShowAsync();
+                }
+            }
+        }
+
 
         //Post
         public static async void PostObject(string api, T obj)
