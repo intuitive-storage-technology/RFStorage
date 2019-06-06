@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using RFStorage.Model;
 using RFStorage.ViewModel;
 
@@ -29,7 +30,39 @@ namespace RFStorage.Handler
             OrganisationVM.SelectedOrganisation = organisation;
         }
 
+        public void CreateOrganisation()
+        {
+            OrganisationVM.OrganisationsSingleton.Create(new Organisation(OrganisationVM.OrganisationID, 
+                OrganisationVM.OrganisationNavn, OrganisationVM.UdleveringsOC, OrganisationVM.TilbageLeveringsOC));
+        }
+
+
+        public async void DeleteOrganisation()
+        {
+            // Create the message dialog and set its content
+            var messageDialog = new MessageDialog("Er du sikker på at du vil fjerne organisationen: " + OrganisationVM.SelectedOrganisation.OrganisationNavn + " ?");
+
+            // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
+            messageDialog.Commands.Add(new UICommand("Ja", new UICommandInvokedHandler(this.CommandInvokedHandler)));
+            messageDialog.Commands.Add(new UICommand("Nej", null));
+
+            // Set the command that will be invoked by default
+            messageDialog.DefaultCommandIndex = 0;
+
+            // Set the command to be invoked when escape is pressed
+            messageDialog.CancelCommandIndex = 1;
+
+            // Show the message dialog
+            await messageDialog.ShowAsync();
+
+        }
+
+        public void CommandInvokedHandler(IUICommand command)
+        {
+            OrganisationVM.OrganisationsSingleton.Remove(OrganisationVM.SelectedOrganisation);
+        }
         #endregion
+
 
             //#region Method
 

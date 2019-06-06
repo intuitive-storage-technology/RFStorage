@@ -43,6 +43,41 @@ namespace RFStorage.Model
         #endregion
         #region Methods
 
+        public void Create(Organisation organisation)
+        {
+            Persistency.PersistencyServices<Organisation>.PostObject("api/organisationers", organisation);
+            OrganisationOC.Add(organisation);
+        }
+
+        public void Remove(Organisation organisation)
+        {
+            Persistency.PersistencyServices<Organisation>.DeleteObjectInt("api/organisations/", organisation.OrganisationID);
+            OrganisationOC.Remove(organisation);
+        }
+
+        public async void GetOrganisationer()
+        {
+            OrganisationOC.Clear();
+            LoadOrganisationAsync();
+        }
+
+        public async void LoadOrganisationAsync()
+        {
+            var organisation = await Persistency.PersistencyServices<Organisation>.GetObject("api/organisations/");
+            if (organisation != null)
+            {
+                foreach (var organ in OrganisationOC)
+                {
+                    OrganisationOC.Add(organ);
+                }
+            }
+            else
+            {
+                OrganisationOC.Add(new Organisation(666, "Team Materiel", new ObservableCollection<Vare>(), new ObservableCollection<Vare>()));
+            }
+        }
+
+
         public void TestOrgan()
         {
             OrganisationOC.Clear();
