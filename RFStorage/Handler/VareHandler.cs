@@ -39,9 +39,10 @@ namespace RFStorage.Handler
         //Create
         public void CreateVare()
         {
-
-            Vare vare = new Vare(VareNavn, VareID, VareType, VareAntal);
-            LagerstatusSingleton.Instance.VareOC.Add(vare);
+            LagerstatusVM.LagerstatusSingleton.Add(new Vare(LagerstatusVM.VareNavn, LagerstatusVM.VareID, 
+                LagerstatusVM.VareType, LagerstatusVM.VareAntal));
+            //Vare vare = new Vare(VareNavn, VareID, VareType, VareAntal);
+            //LagerstatusSingleton.Instance.VareOC.Add(vare);
         }
 
         public void SetSelectedVare(Vare vare)
@@ -54,8 +55,9 @@ namespace RFStorage.Handler
         {
             if (LagerstatusVM.SelectedVare != null)
             {
-                LagerstatusVM.LagerstatusSingleton.VareOC.Remove(LagerstatusVM.SelectedVare);
-                
+                LagerstatusVM.LagerstatusSingleton.Remove(LagerstatusVM.SelectedVare);
+                //LagerstatusVM.LagerstatusSingleton.VareOC.Remove(LagerstatusVM.SelectedVare);
+
             }
         }
 

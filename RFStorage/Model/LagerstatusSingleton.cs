@@ -65,6 +65,47 @@ namespace RFStorage.Model
         }
         #endregion
 
+        #region Methods
+
+        public void Add(Vare vare)
+        {
+            Persistency.PersistencyServices<Vare>.PostObject("api/vares", vare);
+            VareOC.Add(vare);
+        }
+
+        public void Remove(Vare vare)
+        {
+            Persistency.PersistencyServices<Vare>.DeleteObjectInt("api/vares/", vare.VareID);
+            VareOC.Remove(vare);
+        }
+
+
+        public async void GetVare()
+        {
+            VareOC.Clear();
+            LoadVareAsync();
+        }
+
+        public async void LoadVareAsync()
+        {
+            var varer = await Persistency.PersistencyServices<Vare>.GetObject("api/vares/");
+            if (varer != null)
+            {
+                foreach (var vare in varer)
+                {
+                    VareOC.Add(vare);
+                }
+            }
+            else
+            {
+                VareOC.Add(new Vare("team materiel", 666, "programmers", 4));
+            }
+        }
+
+        #endregion
+
+
+
 
         #region TestMethod
         /// <summary>

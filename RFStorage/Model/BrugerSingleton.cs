@@ -62,6 +62,7 @@ namespace RFStorage.Model
         /// <param name="bruger"></param>
         public void Add(Bruger bruger)
         {
+            Persistency.PersistencyServices<Bruger>.PostObject("api/Brugers", bruger);
             BrugerOC.Add(bruger);
         }
 

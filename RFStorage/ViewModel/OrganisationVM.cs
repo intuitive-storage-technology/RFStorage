@@ -22,6 +22,9 @@ namespace RFStorage.ViewModel
         #region Instance Field
         private ICommand _selectOrganisationCommand;
         private ICommand _selectedVareCommand;
+        private ICommand _createOrganisationCommand;
+        private ICommand _deleteOrganisationCommand;
+
         #endregion
         #region OC-Props
         public static ObservableCollection<Vare> SortOC { get; set; }
@@ -35,6 +38,13 @@ namespace RFStorage.ViewModel
         public static Vare SelectedVare { get; set; }
         public Handler.OrganHandler OrganHandler { get; set; }
         #endregion
+
+        #region Organisation props
+
+        public string OrganisationNavn { get; set; }
+        public int OrganisationID { get; set; }
+
+        #endregion
         #region Vare props
         public string VareNavn { get; set; }
         public int VareID { get; set; }
@@ -42,6 +52,29 @@ namespace RFStorage.ViewModel
         public int VareAntal { get; set; }
         #endregion
         #region ICommand props
+
+        public ICommand CreateOrganisationCommand
+        {
+            get
+            {
+                if (_createOrganisationCommand == null)
+                    _createOrganisationCommand = new RelayCommands.RelayCommands(OrganHandler.CreateOrganisation);
+                return _createOrganisationCommand;
+
+            }
+            set {_createOrganisationCommand = value;}
+        }
+
+        public ICommand DeleteOrganisationCommand
+        {
+            get
+            {
+                return _deleteOrganisationCommand ??
+                       (_deleteOrganisationCommand = new RelayCommands.RelayCommands(OrganHandler.DeleteOrganisation));
+            }
+            set { _deleteOrganisationCommand = value; }
+        }
+
         public ICommand SelectedVareCommand
         {
             get
@@ -51,6 +84,7 @@ namespace RFStorage.ViewModel
             }
             set { _selectedVareCommand = value; }
         }
+
         public ICommand SelectOrganisationCommand
         {
             get
@@ -76,6 +110,7 @@ namespace RFStorage.ViewModel
             OrganisationsSingleton.TestOrgan();
             OrganHandler = new Handler.OrganHandler(this);
             VareHandler = new Handler.VareHandler(this);
+            //OrganisationsSingleton.GetOrganisationer(); clearer hvad TestOrgan tilføjede.
             SortOC = new ObservableCollection<Vare>();
             UdleveringsOC = new ObservableCollection<Vare>();
             TilbageLeveringsOC = new ObservableCollection<Vare>();
